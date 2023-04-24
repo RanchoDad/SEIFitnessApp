@@ -6,9 +6,9 @@ const passport = require('passport');
 const exerciseController = require('../controllers/exercise')
 
 // // This app has no "home" page, but your projects should 😀
-// router.get('/', function(req, res, next) {
-//   res.redirect('/exercises');
-// });
+router.get('/', function(req, res, next) {
+  res.redirect('/exercises');
+});
 
 router.get('auth/google', passport.authenticate('google', 
   {scope: ['profile', 'email']

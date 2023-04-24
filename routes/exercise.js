@@ -4,11 +4,11 @@ const exerciseController = require('../controllers/exercise')
 
 router.get('/', exerciseController.index);
 
-// router.get('/new', exerciseController.new);
+router.get('/new', exerciseController.new);
 
 // router.get('/:id', exerciseController.show);
 
-// router.post('/', exerciseController.create);
+router.post('/', exerciseController.create);
 
 // router.delete('/:id', exerciseController.delete);
 

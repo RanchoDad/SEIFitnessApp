@@ -9,7 +9,15 @@ const Exercise = require('../models/exercise')
             // exercises
         })
     },
-    //new
+    new: async (req, res)=> {
+        res.render('exercises/new')
+    },
+
+    show: async (req, res) => {
+        const exercise = await Exercise.findById(req.params.id);
+        res.render('exercises/show')
+    },
+    
     //show
     //create
     //delete

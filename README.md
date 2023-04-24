@@ -16,3 +16,7 @@ While a user will have acccess to the database of exercises and exercise ratings
 Stargate - 044453499181
 
 Google OAuth is configured and the server runs. Skeleton complete! 4.23
+
+--------
+
+This is a test to work. 

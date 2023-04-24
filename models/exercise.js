@@ -4,26 +4,6 @@ const Schema = mongoose.Schema;
 
 // One:Many (like reviews to a movie in our movie-express during class)abc
 const noteSchema = new mongoose.Schema({
-    reps:{
-        type:Number,
-        min:0,
-        max:9999,
-    },
-    sets:{
-        type:Number,
-        min:0,
-        max:9999,
-    },
-    weight:{
-        type:Number,
-        min:0,
-        max:9999,
-    },
-    rest:{
-        type:Number,
-        min:0,
-        max:9999,
-    },
     note:{
         type:String,
         required: true,
@@ -52,7 +32,7 @@ const exerciseSchema = new Schema({
             'Bulgarian Squat',
             'Overhead Squat',
             'Suitcase Squat',
-            'Zercher Squat]']
+            'Zercher Squat']
     },
     hinge:{
         type:String,
@@ -128,224 +108,7 @@ const exerciseSchema = new Schema({
             'Push Press'
         ]
     },
-    rotation:{
-        type:String,
-        enum:[
-            'Kneeling Rotation',
-            'Standing Rotation',
-            'Kneeling Chop',
-            'Standing Chop',
-            'Kneeling Pallof Press',
-            'Standing Pallof Press',
-            'Standing Reverse Chop',
-            'Russian Twist',
-            'Windsheild Wiper']
-    },
-    combination:{
-        type:String,
-        enum:[
-            'Squat/Row',
-            'Squat/Curl/Press',
-            'Squat/Press',
-            'Step/Curl/Press',
-            'Deadlift/Curl',
-            'RDL/Bent-Over Row',
-            'Squat/Upright Row',
-            'Burpee'
-            ]
-    },
-    plyometric:{
-        type:String,
-        enum:[
-            'Jump Squat',
-            '1-Leg Jump',
-            'Jump Lunge',
-            'Chest Pass',
-            'Overhead Pass',
-            'Throwdown',
-            'Depth Jump',
-            'Broad Jump',
-            'Wall Ball',
-            'Lateral Bound',
-            'Jump Rope'
-        ]
-    },
-    gymnastics:{
-        type:String,
-        enum:[
-            'Dip',
-            'Pull Up',
-            'Muscle Up',
-            'Handstand',
-            'Handstand Push Up'
-        ]
-    },
-    kettlebell:{
-        type:String,
-        enum:[
-            '2-Arm Swing',
-            '1-Arm Swing',
-            '1-Arm Snatch',
-            'Goblet Squat',
-            'Press',
-            'Floor Press',
-            'Bent Press',
-            'Bent Over Row',
-            '1-Leg RDL',
-            'Sumo Squat',
-            'Turkish Getup'
-        ]
-    },
-    olmypic:{
-        type:String,
-        enum:[
-            'Power Clean',
-            'Hang Clean',
-            'Snatch',
-            '1-Arm Clean',
-            '1-Arm Snatch',
-            'Clean & Jerk',
-            ]
-    },
-    chest:{
-        type:String,
-        enum:[
-            'Press',
-            'Push Up',
-            'Kneeling Push Up',
-            'Incline Push Up',
-            'Decline Push Up',
-            'Incline Chest Press',
-            'Flat Chest Press',
-            'Decline Chest Press',
-            'Incline Chest Fly',
-            'Flat Chest Fly',
-            'Decline Chest Fly',
-            'Push Up',
-            'T Push Up',
-            'Floor Press'
-        ]
-    },
-    biceps:{
-        type:String,
-        enum:[
-            'Biceps Curl',
-            'Hammer Curl',
-            'Reverse Curl',
-            'Zottmann Curl',
-            'Preacher Curl',
-            'Preacher Hammer Curl',
-            'Preacher Reverse Curl',
-            'Incline Curl',
-            'Incline Hammer Curl',
-            'Narrow Grip Curl',
-            'Wide Grip Curl',
-            'Alternating Curl',
-            'Concentration Curl',
-            'High Curl'
-        ]
-    },
-    triceps:{
-        type:String,
-        enum:[
-            'Dips',
-            'Bench Dip',
-            'Incline Bench Triceps Extension',
-            'Flat Bench Triceps Extension',
-            'Decline Bench Triceps Extension',
-            'Overhead Triceps Extension',
-            'Triceps Pushdown',
-            'Incline Bench Close Grip Press',
-            'Flat Bench Close Grip Press',
-            'Decline Bench Close Grip Press',
-            'French Press',
-            'Incline Frensh Press',
-            'Reverse Grip Pushdown',
-            'Kick back'
-        ]
-    },
-    foreamrs:{
-        type:String,
-        enum:[
-            'Wrist Curl',
-            'Reverse Wrist Curl',
-            'Farmers Walk',
-            'Pull Up Bar Hang',
-            'Wrist Roller'
-        ]
-    },
-    hamstrings:{
-        type:String,
-        enum:[
-            'Seated Leg Curl',
-            '1-Leg Seated Leg Curl',
-            'Prone Leg Curl',
-            '1-Leg Prone Leg Curl',
-            'Supine Leg Curl',
-            '1-Leg Supine Curl',
-            'Decline Bench Supine Leg Curl',
-            '45-Degree Hip Extension',
-            'Glute Ham Raise',
-            '1-Leg 45-Degree Leg Curl',
-            'Pull Throughs',
-            'RDL',
-            'Good Morning',
-            '1-Leg RDL',
-            'KB Swing'
-        ]
-    },
-    quads:{
-        type:String,
-        enum:[
-            'Leg Extension',
-            '1-Leg Extension',
-            '45-Degree Leg Press',
-            'Horizontal Leg Press',
-            'Back Squat',
-            'Front Squat',
-            '1-Leg Squat',
-            'Goblet Squat',
-            'Wall Squat',
-            'Body Weight Squat',
-            'Step Up',
-            'Side Step Up',
-            'Transverse Lunge',
-            'Step Down',
-            'Forward Lunge',
-            'Side Lunge',
-            'Reverse Lunge',
-            'Walking Lunge',
-            '3- Way Lunge',
-            'Clock Lunge',
-            'Drop Lunge',
-            'Bulgarian Lunge',
-            'Stationary Lunge'
-        ]
-    },
-    calves:{
-        type:String,
-        enum:[
-            'Calf Raise',
-            'Seated Calf Raise',
-            'Standing Calf Raise'
-        ]
-    },
-    glutes:{
-        type:String,
-        enum:[
-            'Side Lying Clam',
-            'Side Lying Leg Raise',
-            'Lateral Walk',
-            'Hip Bridge',
-            '1-Leg Hip Bridge',
-            'Hip Bridge March',
-            'Hip Thrust',
-            '1-Leg Hip Thrust',
-            'Donkey Kick',
-            'Crossover Lunge'
-        ]
-    },
-    anteriorCore:{
+    Core:{
         type:String,
         enum:[
             'Kneeling Plank',
@@ -362,43 +125,286 @@ const exerciseSchema = new Schema({
             'Pike'
         ]
     },
-    lateralCore:{
-        type:String,
-        enum:[
-            'Kneeling Side Plank',
-            'Side Plank',
-            'Side Plank (Bottom Leg Up)',
-            'Side Plank (Top Leg Up)',
-            'Side Plank with 1-Arm Row',
-            'Side Bend',
-            '2-Arm Farmers Wlak',
-            '1-Arm Farmers Walk',
-            '1-Arm Waiter Walk'
-        ]
+    reps:{
+        type:Number,
+        min:0,
+        max:9999,
     },
-    posteriorCore:{
-        type:String,
-        enum:[
-            'Hip Bridge',
-            '1-Leg Bridge',
-            'Marching Bridge',
-            'Hip Thruster',
-            '1-Leg Hip Thruster',
-            'Marching Hip Thruster',
-            'Back Extension'
-        ]
-    }
+    sets:{
+        type:Number,
+        min:0,
+        max:9999,
+    },
+    weight:{
+        type:Number,
+        min:0,
+        max:9999,
+    },
+    rest:{
+        type:Number,
+        min:0,
+        max:9999,
+    },
+    equipment:{
+        type: String,
+        enum:['BB','DB','Cable','Bodyweight','Band','TRX','KB','Machine','Mini Band','BOSU','Balance Beam','Foam Balance Pad']
+    },
+    notes: [noteSchema]
 })
+module.exports = mongoose.model('Exercise', exerciseSchema)
+
+
+// removed data
+    // rotation:{
+    //     type:String,
+    //     enum:[
+    //         'Kneeling Rotation',
+    //         'Standing Rotation',
+    //         'Kneeling Chop',
+    //         'Standing Chop',
+    //         'Kneeling Pallof Press',
+    //         'Standing Pallof Press',
+    //         'Standing Reverse Chop',
+    //         'Russian Twist',
+    //         'Windsheild Wiper']
+    // },
+    // combination:{
+    //     type:String,
+    //     enum:[
+    //         'Squat/Row',
+    //         'Squat/Curl/Press',
+    //         'Squat/Press',
+    //         'Step/Curl/Press',
+    //         'Deadlift/Curl',
+    //         'RDL/Bent-Over Row',
+    //         'Squat/Upright Row',
+    //         'Burpee'
+    //         ]
+    // },
+    // plyometric:{
+    //     type:String,
+    //     enum:[
+    //         'Jump Squat',
+    //         '1-Leg Jump',
+    //         'Jump Lunge',
+    //         'Chest Pass',
+    //         'Overhead Pass',
+    //         'Throwdown',
+    //         'Depth Jump',
+    //         'Broad Jump',
+    //         'Wall Ball',
+    //         'Lateral Bound',
+    //         'Jump Rope'
+    //     ]
+    // },
+    // gymnastics:{
+    //     type:String,
+    //     enum:[
+    //         'Dip',
+    //         'Pull Up',
+    //         'Muscle Up',
+    //         'Handstand',
+    //         'Handstand Push Up'
+    //     ]
+    // },
+    // kettlebell:{
+    //     type:String,
+    //     enum:[
+    //         '2-Arm Swing',
+    //         '1-Arm Swing',
+    //         '1-Arm Snatch',
+    //         'Goblet Squat',
+    //         'Press',
+    //         'Floor Press',
+    //         'Bent Press',
+    //         'Bent Over Row',
+    //         '1-Leg RDL',
+    //         'Sumo Squat',
+    //         'Turkish Getup'
+    //     ]
+    // },
+    // olmypic:{
+    //     type:String,
+    //     enum:[
+    //         'Power Clean',
+    //         'Hang Clean',
+    //         'Snatch',
+    //         '1-Arm Clean',
+    //         '1-Arm Snatch',
+    //         'Clean & Jerk',
+    //         ]
+    // },
+    // chest:{
+    //     type:String,
+    //     enum:[
+    //         'Press',
+    //         'Push Up',
+    //         'Kneeling Push Up',
+    //         'Incline Push Up',
+    //         'Decline Push Up',
+    //         'Incline Chest Press',
+    //         'Flat Chest Press',
+    //         'Decline Chest Press',
+    //         'Incline Chest Fly',
+    //         'Flat Chest Fly',
+    //         'Decline Chest Fly',
+    //         'Push Up',
+    //         'T Push Up',
+    //         'Floor Press'
+    //     ]
+    // },
+    // biceps:{
+    //     type:String,
+    //     enum:[
+    //         'Biceps Curl',
+    //         'Hammer Curl',
+    //         'Reverse Curl',
+    //         'Zottmann Curl',
+    //         'Preacher Curl',
+    //         'Preacher Hammer Curl',
+    //         'Preacher Reverse Curl',
+    //         'Incline Curl',
+    //         'Incline Hammer Curl',
+    //         'Narrow Grip Curl',
+    //         'Wide Grip Curl',
+    //         'Alternating Curl',
+    //         'Concentration Curl',
+    //         'High Curl'
+    //     ]
+    // },
+    // triceps:{
+    //     type:String,
+    //     enum:[
+    //         'Dips',
+    //         'Bench Dip',
+    //         'Incline Bench Triceps Extension',
+    //         'Flat Bench Triceps Extension',
+    //         'Decline Bench Triceps Extension',
+    //         'Overhead Triceps Extension',
+    //         'Triceps Pushdown',
+    //         'Incline Bench Close Grip Press',
+    //         'Flat Bench Close Grip Press',
+    //         'Decline Bench Close Grip Press',
+    //         'French Press',
+    //         'Incline Frensh Press',
+    //         'Reverse Grip Pushdown',
+    //         'Kick back'
+    //     ]
+    // },
+    // foreamrs:{
+    //     type:String,
+    //     enum:[
+    //         'Wrist Curl',
+    //         'Reverse Wrist Curl',
+    //         'Farmers Walk',
+    //         'Pull Up Bar Hang',
+    //         'Wrist Roller'
+    //     ]
+    // },
+    // hamstrings:{
+    //     type:String,
+    //     enum:[
+    //         'Seated Leg Curl',
+    //         '1-Leg Seated Leg Curl',
+    //         'Prone Leg Curl',
+    //         '1-Leg Prone Leg Curl',
+    //         'Supine Leg Curl',
+    //         '1-Leg Supine Curl',
+    //         'Decline Bench Supine Leg Curl',
+    //         '45-Degree Hip Extension',
+    //         'Glute Ham Raise',
+    //         '1-Leg 45-Degree Leg Curl',
+    //         'Pull Throughs',
+    //         'RDL',
+    //         'Good Morning',
+    //         '1-Leg RDL',
+    //         'KB Swing'
+    //     ]
+    // },
+    // quads:{
+    //     type:String,
+    //     enum:[
+    //         'Leg Extension',
+    //         '1-Leg Extension',
+    //         '45-Degree Leg Press',
+    //         'Horizontal Leg Press',
+    //         'Back Squat',
+    //         'Front Squat',
+    //         '1-Leg Squat',
+    //         'Goblet Squat',
+    //         'Wall Squat',
+    //         'Body Weight Squat',
+    //         'Step Up',
+    //         'Side Step Up',
+    //         'Transverse Lunge',
+    //         'Step Down',
+    //         'Forward Lunge',
+    //         'Side Lunge',
+    //         'Reverse Lunge',
+    //         'Walking Lunge',
+    //         '3- Way Lunge',
+    //         'Clock Lunge',
+    //         'Drop Lunge',
+    //         'Bulgarian Lunge',
+    //         'Stationary Lunge'
+    //     ]
+    // },
+    // calves:{
+    //     type:String,
+    //     enum:[
+    //         'Calf Raise',
+    //         'Seated Calf Raise',
+    //         'Standing Calf Raise'
+    //     ]
+    // },
+    // glutes:{
+    //     type:String,
+    //     enum:[
+    //         'Side Lying Clam',
+    //         'Side Lying Leg Raise',
+    //         'Lateral Walk',
+    //         'Hip Bridge',
+    //         '1-Leg Hip Bridge',
+    //         'Hip Bridge March',
+    //         'Hip Thrust',
+    //         '1-Leg Hip Thrust',
+    //         'Donkey Kick',
+    //         'Crossover Lunge'
+    //     ]
+    // },
+    // lateralCore:{
+    //     type:String,
+    //     enum:[
+    //         'Kneeling Side Plank',
+    //         'Side Plank',
+    //         'Side Plank (Bottom Leg Up)',
+    //         'Side Plank (Top Leg Up)',
+    //         'Side Plank with 1-Arm Row',
+    //         'Side Bend',
+    //         '2-Arm Farmers Wlak',
+    //         '1-Arm Farmers Walk',
+    //         '1-Arm Waiter Walk'
+    //     ]
+    // },
+    // posteriorCore:{
+    //     type:String,
+    //     enum:[
+    //         'Hip Bridge',
+    //         '1-Leg Bridge',
+    //         'Marching Bridge',
+    //         'Hip Thruster',
+    //         '1-Leg Hip Thruster',
+    //         'Marching Hip Thruster',
+    //         'Back Extension'
+    //     ]
+    // },
+    
     
 // const movementSchema = new Schema ({
 //     movement:{
 //         type: String,
 //         enum:['Squat','Hinge','Lunge','Pull','Press','Rotation','Combination','Plyometric','Gymnastics','Kettlebell','Olmypic','Chest','Biceps', 'Triceps', 'Forearms','Hamstrings','Quads','Calves','Glutes','Anterior Core', 'Lateral Core','Posterior Core'],
 //         required: true
-//     },
-//     equipment:{
-//         type: String,
-//         enum:['BB','DB','Cable','Bodyweight','Band','TRX','KB','Machine','Mini Band','BOSU','Balance Beam','Foam Balance Pad']
 //     },
 //     performedDate: {
 //         type: Date,
@@ -408,4 +414,4 @@ const exerciseSchema = new Schema({
 //     notes: [noteSchema]
 // })
 
-module.exports = mongoose.model('Exercise', exerciseSchema)
+

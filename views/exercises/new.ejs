@@ -7,15 +7,15 @@
     <title>SEIFitness</title>
 </head>
 <body>
-    <h1>Create a new regimen</h1>
-    <form action="/" method="POST">
+    <h1>Create a new regimen </h1>
+    <form action="/" method="GET">
         <!-- date -->
         <label for="DATE">DATE:</label>
         <input id="DATE" type="datetime-local" name="date" value="<%= new Date(Date.now() + (365 * 24 * 60 * 60 * 1000)).toISOString().substr(0,16) %>" required>
         <br>
         <!-- exercise selection based on the movement-->
         <label for="MOVEMENT">Squat:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.squat%>" name="MOVEMENT" id="MOVEMENT">
                 <option value="1">Back Squat</option>
                 <option value="1">Front Squat</option>
                 <option value="1">1-Leg Squat</option>
@@ -32,7 +32,7 @@
                 <option value="1">Zercher Squat</option>
             </select>
         <label for="MOVEMENT">Hinge:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.hinge%>" name="MOVEMENT" id="MOVEMENT">
                 <option value="1"></option>Deadlift</option>
                 <option value="1">Sumo Deadlift</option>
                 <option value="1">RDL</option>
@@ -48,7 +48,7 @@
                 <option value="1">Swing</option>
             </select>
         <label for="MOVEMENT">Lunge:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.lunge%>"name="MOVEMENT" id="MOVEMENT">
                 <option value="">Step Up</option>
                 <option value="">Side Step Up</option>
                 <option value="">Step Down</option>
@@ -65,7 +65,7 @@
                 <option value="">Crossover Lunge</option>
             </select>
         <label for="MOVEMENT">Pull:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.pull%>"name="MOVEMENT" id="MOVEMENT">
                 <option value="">Pull Up</option>
                 <option value="">Chin Up</option>
                 <option value="">Pulldown</option>
@@ -77,7 +77,7 @@
                  <option value="">Face Pull</option>
             </select>
         <label for="MOVEMENT">Press:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.press%>" name="MOVEMENT" id="MOVEMENT">
                 <option value="1">Push Up</option>
                 <option value="2">Kneeling Push Up</option>
                 <option value="3">Incline Push Up</option>
@@ -100,7 +100,7 @@
                 <option value="20">Push Press</option>
             </select>
         <label for="MOVEMENT">Core:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <select value="<%=exercise.core%>" name="MOVEMENT" id="MOVEMENT">
                 <option value="">'Kneeling Plank</option>   
                 <option value="">'Plank',</option>
                 <option value="">'3-Point Plank',</option>
@@ -117,7 +117,7 @@
             <br>
         <!-- equipment selection -->
         <label for="EQUIPMENT">EQUIPMENT:</label>
-        <select id="EQUIPMENT" name="EQUIPMENT">
+        <select value="<%=exercise.equipment%>"id="EQUIPMENT" name="EQUIPMENT">
             <option value="BB">BB</option>
             <option value="DB"></option>
             <option value="Cable"></option>
@@ -135,21 +135,21 @@
         <br>
         <br>
         <label for="reps">Reps:</label>
-        <input type="number" name="reps" min="0" max="9999">
+        <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
         <br>
         <br>
         <label for="sets">Sets:</label>
-        <input type="number" name="sets" min="0" max="9999">
+        <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
         <br>
         <br>
         <label for="weight">Weight:</label>
-        <input type="number" name="weight" min="0" max="9999">
+        <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
         <br>
         <br>
         <label for="rest">Rest (sec):</label>
-        <input type="number" name="rest" min="0" max="9999">
+        <input value="<%=exercise.rest%>" type="number" name="rest" min="0" max="9999">
         <br>
-        <button type="submit">Create workout</button>
+        <button type="submit">Edit workout</button>
     </form>
     <!--  -->
 </body>

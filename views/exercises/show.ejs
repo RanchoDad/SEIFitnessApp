@@ -9,23 +9,33 @@
 <body>
     <h1>I am the show page</h1>
     <!-- (These components will be shown in this page) -->
-    <!-- <h1><%=exercise.date%></h1>
-    <%=exercise.squat%>
-    <%=exercise.hinge%>
-    <%=exercise.lunge%>
-    <%=exercise.pull%>
-    <%=exercise.press%>
-    <%=exercise.core%>
-    <%=exercise.reps%>
-    <%=exercise.sets%>
-    <%=exercise.weight%>
-    <%=exercise.rest%>
-    <%=exercise.equipment%> -->
-    
-    <!-- Performance notes (noteSchema) -->
+    <section class="exercise-details">
+        <h1><a href="/exercises/<%=exercise._id%>"><%=exercise.date%></a></h1>
+    <h3>Lower body:</h3>
+        <p><%=exercise.squat%></p>
+        <p><%=exercise.hinge%></p>
+        <p><%=exercise.lunge%></p>
+     <h3>Upper body:</h3>
+        <p><%=exercise.pull%></p>
+        <p><%=exercise.press%></p>
+    <h3>Core:</h3>
+        <p><%=exercise.core%></p>
+
+    <h5>Reps:<%=exercise.reps%></h5>
+    <h5>Sets:<%=exercise.sets%></h5>
+    <h5>Weight:<%=exercise.weight%></h5>
+    <h5>Rest Time:<%=exercise.rest%></h5>
+    <h5>Equipment Used:<%=exercise.equipment%></h5>
+    </section>
+    <!-- Edit Link -->
+        <a href="/exercises/<%=exercise._id/edit">Edit</a>
+        <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete <%=exercise.date%>">
+        </form>
+    <!-- Adding performance notes(noteSchema) to exercise._id-->
     <h3>Performance notes</h3>
-    <form action="/<%=exercise._id%>/notes" method="POST" id="notes">
-        <label for="notes">Notes:</label>
+    <form action="/<%=/exercises/exercise._id%>/notes" method="POST" id="notes">
+        <label>Note:</label>
         <textarea name="notes" id="note-area" cols="30" rows="10"></textarea>
         <label for="intensity">Intensity:</label>
         <select name="intensity" id="scale-1-10">
@@ -40,6 +50,48 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
+        <input type="submit" value="Add Notes">
+
+        <!-- previous notes & newly created notes-->
+        <% if (exercise.notes.length) { %>
+        <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Notes</th>
+                <th>Intensity</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let total = 0 %>
+              <% exercise.ntoes.forEach(function(r) { %>
+                <% total += r.intensity %>
+                <tr>
+                    <!-- User -->
+                  <td class="note-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+                    <!-- Date -->
+                  <td><%= r.createdAt.toLocaleDateString() %></td>
+                    <!-- Content -->
+                  <td><%= r.content %></td>
+                    <!-- Intensity Scale -->
+                  <td><%= r.rating %></td>
+                  <td>
+                    <% if (user?._id.equals(r.user)) { %>
+                    <!-- Delete Button -->
+                      <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                      </form>
+                    <% } %>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <h5>No History</h5>
+        <% } %>
     </form>
 </body>
 </html>

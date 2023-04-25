@@ -149,6 +149,10 @@ const exerciseSchema = new Schema({
         type: String,
         enum:['BB','DB','Cable','Bodyweight','Band','TRX','KB','Machine','Mini Band','BOSU','Balance Beam','Foam Balance Pad']
     },
+    performedDate: {
+                type: Date,
+                default: new Date().setFullYear(new Date().getFullYear() + 1)
+            },
     notes: [noteSchema]
 })
 module.exports = mongoose.model('Exercise', exerciseSchema)
@@ -406,10 +410,7 @@ module.exports = mongoose.model('Exercise', exerciseSchema)
 //         enum:['Squat','Hinge','Lunge','Pull','Press','Rotation','Combination','Plyometric','Gymnastics','Kettlebell','Olmypic','Chest','Biceps', 'Triceps', 'Forearms','Hamstrings','Quads','Calves','Glutes','Anterior Core', 'Lateral Core','Posterior Core'],
 //         required: true
 //     },
-//     performedDate: {
-//         type: Date,
-//         default: new Date().setFullYear(new Date().getFullYear() + 1)
-//     },
+//     
 //     exercises: [exerciseSchema],
 //     notes: [noteSchema]
 // })

@@ -22,11 +22,40 @@ const Exercise = require('../models/exercise')
             res.render('exercises/new', { errorMsg: err.message});
         }
     },
-    //show
-    //create
-    //delete
-    //edit
-    //update
+
+    //show: async (req, res) => {
+        // const exercise = await Exercise.findById(req.params.id);
+        // res.render('exercises/show')
+    // },
+
+    //delete: async (req, res) => {
+    // try {
+    //     const deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
+    //     res. <----need to determine if we're going back to other exercises
+    //               or the 'show' page ---->
+    //   }catch(err){
+    //     res.send(err)
+    //   }
+    // },
+
+    //edit: async (req, res) => {
+//     try{
+//       const editedExercise = await Exercise.findById(req.params.id)
+//       res.render('exercises/edit', {
+//           editedExercise
+//       })
+//     }catch(err){
+//       res.send(err)
+//     }
+//   },
+    //update: async (req, res) => {
+    // try{
+    //     await Exercise.findByIdAndUpdate(req.params.id, req.body)
+    //     res.redirect(`/exercises/${req.params.id}`)    
+    //   }catch(err){
+    //     res.send(err)
+    //   }
+    // },
     
     //createApi
     // in order for this to work, I have to write codes in movieAddValidator.js

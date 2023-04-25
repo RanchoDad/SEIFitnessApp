@@ -7,7 +7,8 @@ const exerciseController = require('../controllers/exercise')
 
 // // This app has no "home" page, but your projects should 😀
 router.get('/', function(req, res, next) {
-  res.redirect('/exercises');
+  console.log('you are at the homepage')
+  res.render('homepage');
 });
 
 router.get('auth/google', passport.authenticate('google', 

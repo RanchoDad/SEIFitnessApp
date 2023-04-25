@@ -8,5 +8,38 @@
 </head>
 <body>
     <h1>I am the show page</h1>
+    <!-- (These components will be shown in this page) -->
+    <!-- <h1><%=exercise.date%></h1>
+    <%=exercise.squat%>
+    <%=exercise.hinge%>
+    <%=exercise.lunge%>
+    <%=exercise.pull%>
+    <%=exercise.press%>
+    <%=exercise.core%>
+    <%=exercise.reps%>
+    <%=exercise.sets%>
+    <%=exercise.weight%>
+    <%=exercise.rest%>
+    <%=exercise.equipment%> -->
+    
+    <!-- Performance notes (noteSchema) -->
+    <h3>Performance notes</h3>
+    <form action="/<%=exercise._id%>/notes" method="POST" id="notes">
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="note-area" cols="30" rows="10"></textarea>
+        <label for="intensity">Intensity:</label>
+        <select name="intensity" id="scale-1-10">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </form>
 </body>
 </html>

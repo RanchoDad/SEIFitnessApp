@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.render('homepage');
 });
 
-router.get('auth/google', passport.authenticate('google', 
+router.get('/auth/google', passport.authenticate('google', 
   {scope: ['profile', 'email']
 }
 // // this makes the little thing pop up that asks if you want to use google here

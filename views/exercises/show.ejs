@@ -28,13 +28,13 @@
     <h5>Equipment Used:<%=exercise.equipment%></h5>
     </section>
     <!-- Edit Link -->
-        <a href="/exercises/<%=exercise._id/edit">Edit</a>
+        <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
         <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete <%=exercise.date%>">
         </form>
     <!-- Adding performance notes(noteSchema) to exercise._id-->
     <h3>Performance notes</h3>
-    <form action="/<%=/exercises/exercise._id%>/notes" method="POST" id="notes">
+    <form action="/exercises/<%=exercise._id%>/notes" method="POST" id="notes">
         <label>Note:</label>
         <textarea name="notes" id="note-area" cols="30" rows="10"></textarea>
         <label for="intensity">Intensity:</label>

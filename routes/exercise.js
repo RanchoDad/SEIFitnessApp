@@ -6,7 +6,7 @@ router.get('/', exerciseController.index);
 
 router.get('/new', exerciseController.new);
 
-// router.get('/:id', exerciseController.show);   once there's data and id's, we can let this one out
+router.get('/:id', exerciseController.show);   
 
 router.post('/', exerciseController.create);
 

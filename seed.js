@@ -1,4 +1,6 @@
 const Exercise = require('./models/exercise');
+const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 
 const exerciseRegimens = [];
 
@@ -7,22 +9,38 @@ const hingeExercises = Exercise.schema.path('hinge').enumValues;
 const lungeExercises = Exercise.schema.path('lunge').enumValues;
 const pullExercises = Exercise.schema.path('pull').enumValues;
 const pressExercises = Exercise.schema.path('press').enumValues;
+const coreExercises = Exercise.schema.path('core').enumValues;
 
-for (let squat of squatExercises) {
-    for (let hinge of hingeExercises) {
-      for (let lunge of lungeExercises) {
-        for (let pull of pullExercises) {
-          for (let press of pressExercises) {
-            exerciseRegimens.push({
-              squat,
-              hinge,
-              lunge,
-              pull,
-              press,
-            });
-          }
-        }
-      }
+function getRandomElement(array) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled[0];
+}
+
+for (let i = 0; i < 10; i++) { 
+    const regimen = {};
+    regimen.squat = getRandomElement(squatExercises);
+    regimen.hinge = getRandomElement(hingeExercises);
+    regimen.lunge = getRandomElement(lungeExercises);
+    regimen.pull = getRandomElement(pullExercises);
+    regimen.press = getRandomElement(pressExercises);
+    regimen.core = getRandomElement(coreExercises);
+    exerciseRegimens.push(regimen);
+}
+
+console.log(exerciseRegimens);
+
+const url = process.env.DATABASE_URL;
+
+(async () => {
+    try {
+        console.log('seeding the database');
+        const client = await MongoClient.connect(url);
+        const db = client.db('SEIFitnessDB');
+        const result = await db.collection('exercises').insertMany(exerciseRegimens);
+        console.log(`Inserted ${result.insertedCount} documents into the database`);
+        client.close();
+    } catch (err) {
+        console.log(err);
     }
-  }
-  console.log(exerciseRegimens)
+})();
+

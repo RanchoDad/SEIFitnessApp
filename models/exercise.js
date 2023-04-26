@@ -108,7 +108,7 @@ const exerciseSchema = new Schema({
             'Push Press'
         ]
     },
-    Core:{
+    core:{
         type:String,
         enum:[
             'Kneeling Plank',

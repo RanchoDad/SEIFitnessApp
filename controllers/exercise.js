@@ -1,12 +1,11 @@
 const Exercise = require('../models/exercise')
-
- const exerciseController = {
+const exerciseController = {
     
     index: async (req, res) => {
         console.log('index works')
-        // const exercises = await Exercise.find({});
+        const exercises = await Exercise.find({});
         res.render('exercises/index', {
-            // exercises
+            exercises
         })
     },
 
@@ -23,10 +22,13 @@ const Exercise = require('../models/exercise')
         }
     },
 
-    //show: async (req, res) => {
-        // const exercise = await Exercise.findById(req.params.id);
-        // res.render('exercises/show')
-    // },
+    show: async (req, res) => {
+        console.log('did it get here?')
+        const exercise = await Exercise.findById(req.params.id);
+        res.render('exercises/show', {
+            exercise
+        })
+    },
 
     //delete: async (req, res) => {
     // try {

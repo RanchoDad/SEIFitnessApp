@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>The index page</h1>
+<section>
 <% let counter = 1 %>
 <% exercises.forEach(function(exercise){%>
     <a href="/exercises/<%= exercise._id %>">Choose workout <%= counter%></a> 
@@ -16,6 +17,6 @@
    
     <% counter ++ %>
 <%})%>
-
+</section>
 
 <%- include('../partials/footer') %>

@@ -13,7 +13,7 @@ router.get('/new', ensureAuthenticated, exerciseController.new);
 
 router.get('/:id', ensureAuthenticated, exerciseController.show);   
 
-// router.post('/', ensureAuthenticated, exerciseController.create);
+router.post('/', ensureAuthenticated, exerciseController.create);
 
 // router.delete('/:id', ensureAuthenticated,  exerciseController.delete);   
 

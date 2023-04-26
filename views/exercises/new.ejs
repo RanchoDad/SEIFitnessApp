@@ -8,32 +8,58 @@
 </head>
 <body>
     <h1>Create a new regimen</h1>
-    <form action="/" method="POST">
+    <form action="/exercises" method="POST">
         <!-- date -->
         <label for="DATE">DATE:</label>
         <input id="DATE" type="datetime-local" name="date" value="<%= new Date(Date.now() + (365 * 24 * 60 * 60 * 1000)).toISOString().substr(0,16) %>" required>
         <br>
-        <!-- exercise selection based on the movement-->
-        <label for="MOVEMENT">Squat:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+        <!-- Squat-->
+        <label for="Squat">Squat:</label>
+            <select name="squat" id="movement">
                 <option value="1">Back Squat</option>
-                <option value="1">Front Squat</option>
-                <option value="1">1-Leg Squat</option>
-                <option value="1">Goblet Squat</option>
-                <option value="1">Wall Sit</option>
-                <option value="1">Squat</option>
-                <option value="1">Leg Press</option>
-                <option value="1">1-Leg Leg Press</option>
-                <option value="1">Sumo Squat</option>
-                <option value="1">Split Squat</option>
-                <option value="1">Bulgarian Squat</option>
-                <option value="1">Overhead Squat</option>
-                <option value="1">Suitcase Squat</option>
-                <option value="1">Zercher Squat</option>
+                <option value="2">Front Squat</option>
+                <option value="3">1-Leg Squat</option>
+                <option value="4">Goblet Squat</option>
+                <option value="5">Wall Sit</option>
+                <option value="6">Squat</option>
+                <option value="7">Leg Press</option>
+                <option value="8">1-Leg Leg Press</option>
+                <option value="9">Sumo Squat</option>
+                <option value="10">Split Squat</option>
+                <option value="11">Bulgarian Squat</option>
+                <option value="12">Overhead Squat</option>
+                <option value="13">Suitcase Squat</option>
+                <option value="14">Zercher Squat</option>
             </select>
-        <label for="MOVEMENT">Hinge:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
-                <option value="1"></option>Deadlift</option>
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.squat.reps" min="0" max="9999">
+        <label for="sets">Sets:</label>
+        <input type="number" name="exercise.squat.sets" min="0" max="9999">
+        <label for="weight">Weight:</label>
+        <input type="number" name="exercise.squat.weight" min="0" max="9999">
+        <label for="rest">Rest (sec):</label>
+        <input type="number" name="exercise.squat.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.squat.equipment">
+            <option value="BB">BB</option>
+            <option value="DB">DB</option>
+            <option value="Cable">Cable</option>
+            <option value="Bodyweight">Bodyweight</option>
+            <option value="Band">Band</option>
+            <option value="TRX">TRX</option>
+            <option value="KB">KB</option>
+            <option value="Machine">Machine</option>
+            <option value="Mini Band">Mini Band</option>
+            <option value="BOSU">BOSU</option>
+            <option value="BalanceBeam">Balance Beam</option>
+            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
+            <option value="Slidingdisc">Sliding Disc</option>
+        </select>
+            <br>
+            <!-- Hinge -->
+        <label for="Hinge">Hinge:</label>
+            <select name="hinge" id="movement">
+                <option value="1">Deadlift</option>
                 <option value="1">Sumo Deadlift</option>
                 <option value="1">RDL</option>
                 <option value="1">1-Leg RDL</option>
@@ -47,8 +73,34 @@
                 <option value="1">Bridge</option>
                 <option value="1">Swing</option>
             </select>
-        <label for="MOVEMENT">Lunge:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.hinge.reps" min="0" max="9999">
+        <label for="sets">Sets:</label>
+        <input type="number" name="exercise.hinge.sets" min="0" max="9999">
+        <label for="weight">Weight:</label>
+        <input type="number" name="exercise.hinge.weight" min="0" max="9999">
+        <label for="rest">Rest (sec):</label>
+        <input type="number" name="exercise.hinge.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.hinge.equipment">
+            <option value="BB">BB</option>
+            <option value="DB">DB</option>
+            <option value="Cable">Cable</option>
+            <option value="Bodyweight">Bodyweight</option>
+            <option value="Band">Band</option>
+            <option value="TRX">TRX</option>
+            <option value="KB">KB</option>
+            <option value="Machine">Machine</option>
+            <option value="Mini Band">Mini Band</option>
+            <option value="BOSU">BOSU</option>
+            <option value="BalanceBeam">Balance Beam</option>
+            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
+            <option value="Slidingdisc">Sliding Disc</option>
+        </select>
+            <br>
+            <!-- Lunge -->
+        <label for="Lunge">Lunge:</label>
+            <select name="lunge" id="movement">
                 <option value="">Step Up</option>
                 <option value="">Side Step Up</option>
                 <option value="">Step Down</option>
@@ -64,8 +116,34 @@
                 <option value="">Stationary Lunge</option>
                 <option value="">Crossover Lunge</option>
             </select>
-        <label for="MOVEMENT">Pull:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.lunge.reps" min="0" max="9999">
+        <label for="sets">Sets:</label>
+        <input type="number" name="exercise.lunge.sets" min="0" max="9999">
+        <label for="weight">Weight:</label>
+        <input type="number" name="exercise.lunge.weight" min="0" max="9999">
+        <label for="rest">Rest (sec):</label>
+        <input type="number" name="exercise.lunge.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.lunge.equipment">
+            <option value="BB">BB</option>
+            <option value="DB">DB</option>
+            <option value="Cable">Cable</option>
+            <option value="Bodyweight">Bodyweight</option>
+            <option value="Band">Band</option>
+            <option value="TRX">TRX</option>
+            <option value="KB">KB</option>
+            <option value="Machine">Machine</option>
+            <option value="Mini Band">Mini Band</option>
+            <option value="BOSU">BOSU</option>
+            <option value="BalanceBeam">Balance Beam</option>
+            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
+            <option value="Slidingdisc">Sliding Disc</option>
+        </select>
+            <br>
+            <!-- pull -->
+        <label for="Pull">Pull:</label>
+            <select name="pull" id="movement">
                 <option value="">Pull Up</option>
                 <option value="">Chin Up</option>
                 <option value="">Pulldown</option>
@@ -76,8 +154,34 @@
                 <option value="">Row</option>
                  <option value="">Face Pull</option>
             </select>
-        <label for="MOVEMENT">Press:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.pull.reps" min="0" max="9999">
+        <label for="sets">Sets:</label>
+        <input type="number" name="exercise.pull.sets" min="0" max="9999">
+        <label for="weight">Weight:</label>
+        <input type="number" name="exercise.pull.weight" min="0" max="9999">
+        <label for="rest">Rest (sec):</label>
+        <input type="number" name="exercise.pull.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.pull.equipment">
+            <option value="BB">BB</option>
+            <option value="DB">DB</option>
+            <option value="Cable">Cable</option>
+            <option value="Bodyweight">Bodyweight</option>
+            <option value="Band">Band</option>
+            <option value="TRX">TRX</option>
+            <option value="KB">KB</option>
+            <option value="Machine">Machine</option>
+            <option value="Mini Band">Mini Band</option>
+            <option value="BOSU">BOSU</option>
+            <option value="BalanceBeam">Balance Beam</option>
+            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
+            <option value="Slidingdisc">Sliding Disc</option>
+        </select>
+            <br>
+            <!-- Press -->
+        <label for="Press">Press:</label>
+            <select name="press" id="movement">
                 <option value="1">Push Up</option>
                 <option value="2">Kneeling Push Up</option>
                 <option value="3">Incline Push Up</option>
@@ -99,25 +203,16 @@
                 <option value="19">Modified Arnold Press</option>
                 <option value="20">Push Press</option>
             </select>
-        <label for="MOVEMENT">Core:</label>
-            <select name="MOVEMENT" id="MOVEMENT">
-                <option value="">'Kneeling Plank</option>   
-                <option value="">'Plank',</option>
-                <option value="">'3-Point Plank',</option>
-                <option value="">'2-Point Plank',</option>
-                <option value="">'Plank with 1-Arm Row',</option>
-                <option value="">'Ab Rollout',</option>
-                <option value="">'Body Saw',</option>
-                <option value="">'Stir the Pot',</option>
-                <option value="">'Crunch',</option>
-                <option value="">'Reverse Crunch',</option>
-                <option value="">'Jackknife',</option>
-                <option value="">'Pike'</option>
-            </select>
-            <br>
-        <!-- equipment selection -->
-        <label for="EQUIPMENT">EQUIPMENT:</label>
-        <select id="EQUIPMENT" name="EQUIPMENT">
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.press.reps" min="0" max="9999">
+        <label for="sets">Sets:</label>
+        <input type="number" name="exercise.press.sets" min="0" max="9999">
+        <label for="weight">Weight:</label>
+        <input type="number" name="exercise.press.weight" min="0" max="9999">
+        <label for="rest">Rest (sec):</label>
+        <input type="number" name="exercise.press.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.press.equipment">
             <option value="BB">BB</option>
             <option value="DB">DB</option>
             <option value="Cable">Cable</option>
@@ -132,25 +227,50 @@
             <option value="Foam-Balance-Pad">Foam Balance Pad</option>
             <option value="Slidingdisc">Sliding Disc</option>
         </select>
-        <br>
-        <br>
-        <label for="reps">Reps:</label>
-        <input type="number" name="reps" min="0" max="9999">
-        <br>
-        <br>
+            <br>
+            <!-- Core -->
+        <label for="Core">Core:</label>
+            <select name="core" id="movement">
+                <option value="">'Kneeling Plank</option>   
+                <option value="">'Plank',</option>
+                <option value="">'3-Point Plank',</option>
+                <option value="">'2-Point Plank',</option>
+                <option value="">'Plank with 1-Arm Row',</option>
+                <option value="">'Ab Rollout',</option>
+                <option value="">'Body Saw',</option>
+                <option value="">'Stir the Pot',</option>
+                <option value="">'Crunch',</option>
+                <option value="">'Reverse Crunch',</option>
+                <option value="">'Jackknife',</option>
+                <option value="">'Pike'</option>
+            </select>
+            <label for="reps">Reps:</label>
+        <input type="number" name="exercise.core.reps" min="0" max="9999">
         <label for="sets">Sets:</label>
-        <input type="number" name="sets" min="0" max="9999">
-        <br>
-        <br>
+        <input type="number" name="exercise.core.sets" min="0" max="9999">
         <label for="weight">Weight:</label>
-        <input type="number" name="weight" min="0" max="9999">
-        <br>
-        <br>
+        <input type="number" name="exercise.core.weight" min="0" max="9999">
         <label for="rest">Rest (sec):</label>
-        <input type="number" name="rest" min="0" max="9999">
-        <br>
+        <input type="number" name="exercise.core.rest" min="0" max="9999">
+        <label for="equipment">equipment:</label>
+        <select id="equipment" name="exercise.core.equipment">
+            <option value="BB">BB</option>
+            <option value="DB">DB</option>
+            <option value="Cable">Cable</option>
+            <option value="Bodyweight">Bodyweight</option>
+            <option value="Band">Band</option>
+            <option value="TRX">TRX</option>
+            <option value="KB">KB</option>
+            <option value="Machine">Machine</option>
+            <option value="Mini Band">Mini Band</option>
+            <option value="BOSU">BOSU</option>
+            <option value="BalanceBeam">Balance Beam</option>
+            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
+            <option value="Slidingdisc">Sliding Disc</option>
+        </select>
+            <br>
+       
         <button type="submit">Create workout</button>
     </form>
-    <!--  -->
 </body>
 </html>

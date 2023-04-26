@@ -1,4 +1,7 @@
 const Exercise = require('../models/exercise')
+
+
+  
 const exerciseController = {
     
     index: async (req, res) => {
@@ -13,17 +16,17 @@ const exerciseController = {
         res.render('exercises/new')
     },
    
-    create: async (req, res) => {
-        try {
-            const exercise = await Exercise.create(req.body);
-        }catch(err){
-            console.log(err);
-            res.render('exercises/new', { errorMsg: err.message});
-        }
-    },
+    // create: async (req, res) => {
+    //     try {
+    //         const exercise = await Exercise.create(req.body);
+    //     }catch(err){
+    //         console.log(err);
+    //         res.render('exercises/new', { errorMsg: err.message});
+    //     }
+    // },
 
     show: async (req, res) => {
-        console.log('did it get here?')
+        console.log('this is the show route')
         const exercise = await Exercise.findById(req.params.id);
         res.render('exercises/show', {
             exercise

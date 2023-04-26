@@ -6,14 +6,9 @@
 <% exercises.forEach(function(exercise){%>
     <a href="/exercises/<%= exercise._id %>">Choose workout <%= counter%></a> 
     <h3>Core:</h3>
-    <p><%=exercise.core%></p>
+    <p><%=exercise.name%></p>
     <h3>Lower body:</h3>
-        <p><%=exercise.squat%></p>
-        <p><%=exercise.hinge%></p>
-        <p><%=exercise.lunge%></p>
-     <h3>Upper body:</h3>
-        <p><%=exercise.pull%></p>
-        <p><%=exercise.press%></p>
+        
    
     <% counter ++ %>
 <%})%>

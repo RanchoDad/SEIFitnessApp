@@ -1,35 +1,31 @@
 const Exercise = require('./models/exercise');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
-
-const exerciseRegimens = [];
-
-const squatExercises = Exercise.schema.path('squat').enumValues;
-const hingeExercises = Exercise.schema.path('hinge').enumValues;
-const lungeExercises = Exercise.schema.path('lunge').enumValues;
-const pullExercises = Exercise.schema.path('pull').enumValues;
-const pressExercises = Exercise.schema.path('press').enumValues;
-const coreExercises = Exercise.schema.path('core').enumValues;
-
-function getRandomElement(array) {
-    const shuffled = array.sort(() => 0.5 - Math.random());
-    return shuffled[0];
-}
-
-for (let i = 0; i < 3; i++) { 
-    const regimen = {};
-    regimen.squat = getRandomElement(squatExercises);
-    regimen.hinge = getRandomElement(hingeExercises);
-    regimen.lunge = getRandomElement(lungeExercises);
-    regimen.pull = getRandomElement(pullExercises);
-    regimen.press = getRandomElement(pressExercises);
-    regimen.core = getRandomElement(coreExercises);
-    exerciseRegimens.push(regimen);
-}
-
-console.log(exerciseRegimens);
-
 const url = process.env.DATABASE_URL;
+
+const exerciseRegimens = [{
+    name: "Squat, Shoulder Press, Forward Lunge",
+    description: "Perform each exercise once per set, rest for 60 seconds and continue." ,
+    sets: 3,
+    reps: 15,
+    weight: 30,
+    equipment: "Kettlebell"
+}, {
+    name: "Backward Lunge, Chest Press, Bicep Curls",
+    description: "Perform each exercise once per set, rest for 45 seconds and continue.",
+    sets: 4,
+    reps: 12,
+    weight: 25,
+    equipment: "Dumbbells"
+}, {
+    name: "Calf Raises, Chest Flies, Tricep Press",
+    description: "Perform each exercise once per set, rest for 30 seconds and continue.",
+    sets: 5,
+    reps: 7,
+    weight: 20,
+    equipment: "Kettlebells"
+}];
+
 
 (async () => {
     try {

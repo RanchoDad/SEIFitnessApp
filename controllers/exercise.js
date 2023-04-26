@@ -1,6 +1,4 @@
-const Exercise = require('../models/exercise')
-
-
+const Exercise = require('../models/exercise');
   
 const exerciseController = {
     

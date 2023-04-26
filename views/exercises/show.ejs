@@ -1,115 +1,64 @@
 <%- include('../partials/header') %>
 
-    <h1>I am the show page</h1>
-    <!-- (These components will be shown in this page) -->
-    <section class="exercise-details">
-        <h1><a href="/exercises/<%=exercise._id%>"><%=exercise.date%></a></h1>
-    <h3>Lower body:</h3>
-        <h5><%=exercise.squat%></h5>
-          <p>Reps: <%= exercise.squat.reps %></p>
-          <p>Sets: <%= exercise.squat.sets %></p>
-          <p>Weight: <%= exercise.squat.weight %></p>
-          <p>Rest: <%= exercise.squat.rest %></p>
-          <p>Equipment: <%= exercise.squat.equipment %></p>
-         <h5><%=exercise.hinge%></h5>
-          <p>Reps: <%= exercise.hinge.reps %></p>
-          <p>Sets: <%= exercise.hinge.sets %></p>
-          <p>Weight: <%= exercise.hinge.weight %></p>
-          <p>Rest: <%= exercise.hinge.rest %></p>
-          <p>Equipment: <%= exercise.hinge.equipment %></p>
-        <h5><%=exercise.lunge%></h5>
-          <p>Reps: <%= exercise.lunge.reps %></p>
-          <p>Sets: <%= exercise.lunge.sets %></p>
-          <p>Weight: <%= exercise.lunge.weight %></p>
-          <p>Rest: <%= exercise.lunge.rest %></p>
-          <p>Equipment: <%= exercise.lunge.equipment %></p>
-    <h3>Upper body:</h3>
-        <h5><%=exercise.pull%></h5>
-          <p>Reps: <%= exercise.pull.reps %></p>
-          <p>Sets: <%= exercise.pull.sets %></p>
-          <p>Weight: <%= exercise.pull.weight %></p>
-          <p>Rest: <%= exercise.pull.rest %></p>
-          <p>Equipment: <%= exercise.pull.equipment %></p>
-        <h5><%=exercise.press%></h5>
-          <p>Reps: <%= exercise.press.reps %></p>
-          <p>Sets: <%= exercise.press.sets %></p>
-          <p>Weight: <%= exercise.press.weight %></p>
-          <p>Rest: <%= exercise.press.rest %></p>
-          <p>Equipment: <%= exercise.press.equipment %></p>
-    <h3>Core:</h3>
-        <h5><%=exercise.core%></h5>
-          <p>Reps: <%= exercise.core.reps %></p>
-          <p>Sets: <%= exercise.core.sets %></p>
-          <p>Weight: <%= exercise.core.weight %></p>
-          <p>Rest: <%= exercise.core.rest %></p>
-          <p>Equipment: <%= exercise.core.equipment %></p>
-
-    </section>
-    <!-- Edit Link -->
-        <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
-        <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete <%=exercise.date%>">
-        </form>
-    <!-- Adding performance notes(noteSchema) to exercise._id-->
-    <h3>Performance notes</h3>
-    <form action="/exercises/<%=exercise._id%>/notes" method="POST" id="notes">
-        <label>Note:</label>
-        <textarea name="notes" id="note-area" cols="30" rows="10"></textarea>
-        <label for="intensity">Intensity:</label>
-        <select name="intensity" id="scale-1-10">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <input type="submit" value="Add Notes">
-
-        <!-- previous notes & newly created notes-->
-        <% if (exercise.notes.length) { %>
-        <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Date</th>
-                <th>Notes</th>
-                <th>Intensity</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% let total = 0 %>
-              <% exercise.ntoes.forEach(function(r) { %>
-                <% total += r.intensity %>
-                <tr>
-                    <!-- User -->
-                  <td class="note-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-                    <!-- Date -->
-                  <td><%= r.createdAt.toLocaleDateString() %></td>
-                    <!-- Content -->
-                  <td><%= r.content %></td>
-                    <!-- Intensity Scale -->
-                  <td><%= r.rating %></td>
-                  <td>
-                    <% if (user?._id.equals(r.user)) { %>
-                    <!-- Delete Button -->
-                      <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                      </form>
-                    <% } %>
-                  </td>
-                </tr>
-              <% }); %>
-            </tbody>
-          </table>
-        <% } else { %>
-          <h5>No History</h5>
-        <% } %>
+<h1>I am the show page</h1>
+<!-- (These components will be shown in this page) -->
+<div>Exercise:</div>
+<div><%= exercise.name%></div>
+<p><%= exercise.sets%></p>
+</section>
+<!-- Edit Link -->
+    <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
+    <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
+        
     </form>
+<!-- Adding performance notes(noteSchema) to exercise._id-->
+<h3>Details</h3>
 
+
+<form action="/exercises/<%=exercise._id%>/notes" method="POST" id="repset">
+    <label for="reps">Reps:</label>
+    <input type="number" name="repset.reps" min="0" max="9999">
+    <br>
+    <label for="sets">Sets:</label>
+    <input type="number" name="repset.sets" min="0" max="9999">
+    <br>
+    <label for="weight">Weight:</label>
+    <input type="number" name="repset.weight" min="0" max="9999">
+    <br>
+    <label for="equipment">equipment:</label>
+    <input type="text" name="repset.equipment">
+    </select>
+    <input type="submit" value="Add Notes">
+   
+        <tbody>
+          <% let total = 0 %>
+          <% exercise.repset.forEach(function(r) { %>
+            <tr>
+                <!-- User -->
+              <td class="note-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+                <!-- Exercise -->
+              <td><%= r.exercise.name %></td>
+                <!-- Reps -->
+              <td><%= r.repset.rep %></td>
+                <!-- Sets -->
+              <td><%= r.repset.set %></td>
+                <!-- Weight -->
+                <td><%= r.repset.weight %></td>
+                <!-- Equipment -->
+                <td><%= r.repset.equipment %></td>
+              <td>
+                <% if (user?._id.equals(r.user)) { %>
+                <!-- Delete Button -->
+                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    <%  }else { %>
+      <h5>No History</h5>
+    <% }}) %>
+</form>
     <%- include('../partials/footer') %>

@@ -1,21 +1,18 @@
 
 /*CSS*/
 
-body {
-  /* The image used */
+body{
   background-image: url(../images/Background.jpg);
-  /* Full height */
   height: 100%; 
-  /* Center and scale the image nicely */
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: auto;
 }
 
 
 #partial_header{
   height: 4rem;
-  background-color: rgb(26, 68, 151);
+  background-color: #003b6b;
   padding: 1rem 2rem;
 }
 

@@ -1,8 +1,22 @@
 
 /*CSS*/
 
-.testHEAD {
-  color: red;
+body {
+  /* The image used */
+  background-image: url(../images/Background.jpg);
+  /* Full height */
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+#partial_header{
+  height: 4rem;
+  background-color: rgb(26, 68, 151);
+  padding: 1rem 2rem;
 }
 
 /* the overlay (background) */

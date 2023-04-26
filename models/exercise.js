@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
+const User = require('./user');
 
 // One:Many (like reviews to a movie in our movie-express during class)abc
 const noteSchema = new mongoose.Schema({
@@ -17,6 +18,10 @@ const noteSchema = new mongoose.Schema({
 })
 // each movement (from movementSchema) will have set (options) of exercises)
 const exerciseSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     squat: {
         type:String,
         enum:['Back Squat',
@@ -124,7 +129,7 @@ const exerciseSchema = new Schema({
             'Jackknife',
             'Pike'
         ]
-    },
+    }, 
     reps:{
         type:Number,
         min:0,

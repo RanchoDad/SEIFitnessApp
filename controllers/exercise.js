@@ -16,15 +16,16 @@ const exerciseController = {
         res.render('exercises/new')
     },
    
-    // create: async (req, res) => {
-    //     try {
-    //         const exercise = await Exercise.create(req.body);
-    //     }catch(err){
-    //         console.log(err);
-    //         res.render('exercises/new', { errorMsg: err.message});
-    //     }
-    // },
-
+    create: async (req, res) => {
+        try {
+            const newExercise = await Exercise.create(req.body);
+            res.redirect(`/exercises/${newExercise._id}`);
+        }catch(err){
+            console.log(err);
+            res.render('exercises/new', { errorMsg: err.message});
+        }
+    },
+    
     show: async (req, res) => {
         console.log('this is the show route')
         const exercise = await Exercise.findById(req.params.id);

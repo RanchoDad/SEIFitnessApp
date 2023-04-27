@@ -5,9 +5,12 @@ const User = require('./user');
 
 const recapSchema = new Schema({
   intensity: Number,
-  description: String
-},
-{  _id: false
+  description: String,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
 })
 
 const exerciseSchema = new Schema ({
@@ -20,6 +23,11 @@ const exerciseSchema = new Schema ({
   recap: {
     type: [recapSchema],
     default: []
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 })
 

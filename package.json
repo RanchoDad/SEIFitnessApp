@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/jhchrischoi/SEIFitnessApp-1/issues"
   },
-  "homepage": "https://github.com/jhchrischoi/SEIFitnessApp-1#readme"
+  "homepage": "https://github.com/jhchrischoi/SEIFitnessApp-1#readme",
+  "devDependencies": {
+    "prettier": "2.8.8"
+  }
 }

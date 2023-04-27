@@ -1,4 +1,4 @@
-const Exercise = require('../models/exercise');
+const Exercise = require("../models/exercise");
 
 module.exports = {
   create,
@@ -20,14 +20,20 @@ async function create(req, res) {
   res.redirect(`/exercises/${exercise._id}`);
 }
 function deleteNotes(req, res, next) {
-  Exercise.findOne({'notes._id': req.params.id, 'notes.user': req.user._id}).then(function(exercise) {
-    if (!exercise) return res.redirect('/exercises');
+  Exercise.findOne({
+    "notes._id": req.params.id,
+    "notes.user": req.user._id,
+  }).then(function (exercise) {
+    if (!exercise) return res.redirect("/exercises");
     exercise.notes.remove(req.params.id);
-    exercise.save().then(function() {
-      res.redirect(`/exercises/${exercise._id}`);
-    }).catch(function(err) {
-      return next(err);
-      // res.redirect(`/exercises/${exercise._id}`);
-    });
+    exercise
+      .save()
+      .then(function () {
+        res.redirect(`/exercises/${exercise._id}`);
+      })
+      .catch(function (err) {
+        return next(err);
+        // res.redirect(`/exercises/${exercise._id}`);
+      });
   });
 }

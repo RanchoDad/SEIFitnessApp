@@ -6,23 +6,22 @@ const overlayResumeClose = document.getElementById("menu-link2");
 const overlayResourceClose = document.getElementById("menu-link3");
 
 //Open Menu
-overlayMenuOpen.addEventListener("click", function openMenu(){
-  document.getElementById("myOverlay").style.width ="100%";
+overlayMenuOpen.addEventListener("click", function openMenu() {
+  document.getElementById("myOverlay").style.width = "100%";
 });
 //Close Menu
-overlayMenuClose.addEventListener("click", function closeMenu(){
-  document.getElementById("myOverlay").style.width="0%";
+overlayMenuClose.addEventListener("click", function closeMenu() {
+  document.getElementById("myOverlay").style.width = "0%";
 });
 //Close Bio
-overlayBioClose.addEventListener("click", function closeBioLink(){
-  document.getElementById("myOverlay").style.width="0%";
+overlayBioClose.addEventListener("click", function closeBioLink() {
+  document.getElementById("myOverlay").style.width = "0%";
 });
 //Close Resume
-overlayResumeClose.addEventListener("click", function closeResumeLink(){
-  document.getElementById("myOverlay").style.width="0%";
+overlayResumeClose.addEventListener("click", function closeResumeLink() {
+  document.getElementById("myOverlay").style.width = "0%";
 });
 //Close Resources
-overlayResourceClose.addEventListener("click", function closeResourceLink(){
-  document.getElementById("myOverlay").style.width="0%";
+overlayResourceClose.addEventListener("click", function closeResourceLink() {
+  document.getElementById("myOverlay").style.width = "0%";
 });
-

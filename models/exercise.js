@@ -1,26 +1,23 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema; 
-const User = require('./user');
+const Schema = mongoose.Schema;
+const User = require("./user");
 
 const repsetSchema = new Schema({
   description: String,
   sets: Number,
   reps: Number,
   weight: Number,
-  equipment: String
-})
+  equipment: String,
+});
 
-const exerciseSchema = new Schema ({
+const exerciseSchema = new Schema({
   name: { type: String, required: true },
   repset: [repsetSchema],
-})
+});
 
-
-const Exercise = mongoose.model('Exercise', exerciseSchema);
+const Exercise = mongoose.model("Exercise", exerciseSchema);
 module.exports = Exercise;
-
-
 
 // // One:Many (like reviews to a movie in our movie-express during class)abc
 // const noteSchema = new mongoose.Schema({
@@ -173,7 +170,7 @@ module.exports = Exercise;
 //                       }
 //                     }
 //                 },
-            
+
 //     pull:{
 //         type:{
 //             type:{
@@ -320,6 +317,3 @@ module.exports = Exercise;
 //             },
 //     notes: [noteSchema]
 // });
-
-
-

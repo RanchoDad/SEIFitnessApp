@@ -1,89 +1,90 @@
-
 /*CSS*/
 
-body{
+body {
   background-image: url(../images/Background.jpg);
-  height: 100%; 
-  background-position: top;
+  width: 100%;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
-
-#partial_header{
-  height: 4rem;
+#partial_header {
+  height: 5rem;
   background-color: #003b6b;
   padding: 1rem 2rem;
 }
 
+.workout-list {
+  margin: 1.5rem;
+}
+
+#google-logo {
+  height: 4rem;
+  width: 4rem;
+}
+
 /* the overlay (background) */
 #overlay-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    height: 4rem;
-    width: 4rem;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 5px 5px;
-    border: none;
-    border-radius: 10%;
-    font-size: 1.5rem;
-    transition: background-color 0.3s;
-  }
-  #overlay-menu:hover {
-    background-color: #464646;
-    color: white;
-  }
-  
-  /* close button position */
-  .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-  
-  /* overlay reveal*/
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-  
-  /* overlay contents in overlay */
-  .overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  /* The navigation links inside the overlay */
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 60px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* overlay effects*/
-  .overlay a:hover,
-  .overlay a:focus {
-    color: #464646;
-  }
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  height: 4rem;
+  width: 4rem;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 5px 5px;
+  border: none;
+  border-radius: 10%;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+#overlay-menu:hover {
+  background-color: #464646;
+  color: white;
+}
 
+/* close button position */
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
 
+/* overlay reveal*/
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
 
+/* overlay contents in overlay */
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
 
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 60px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
 
-
+/* overlay effects*/
+.overlay a:hover,
+.overlay a:focus {
+  color: #464646;
+}

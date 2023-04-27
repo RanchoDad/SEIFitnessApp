@@ -7,5 +7,4 @@
 // router.post('/:id/notes', ensureLoggedIn, notesCtrl.create);
 // router.delete('/notes/:id', ensureLoggedIn, notesCtrl.deleteNotes);
 
-
 // module.exports = router;

@@ -2,7 +2,7 @@
 
 Stargate - 04192341412
 
---------------------------------------
+---
 
 SEIFitness App
 
@@ -12,11 +12,12 @@ Exercises in the database will have type attributes (Schema), allowing them to b
 
 While a user will have acccess to the database of exercises and exercise ratings, only by authenication/authorized user can they create sessions, edit their history, and attach reviews.
 
-----------------------------------------
+---
+
 Stargate - 044453499181
 
 Google OAuth is configured and the server runs. Skeleton complete! 4.23
 
---------
+---
 
-This is a test to work. 
+This is a test to work.

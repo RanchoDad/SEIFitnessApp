@@ -22,16 +22,19 @@
         <div class="overlay" id="myOverlay">
           <!-- Button to close the overlay navigation -->
           <a href="javascript:void(0)" class="closebtn" id="closeOverlay"
-            >&times;</a
-          >
+            >&times;</a>
           <!-- Overlay content -->
-          <div class="overlay-content">
-            <a href="/auth/google" class="login">LOG IN <img id="google-logo" src="https://i.imgur.com/FHjYyi0.png"> </a>
-            <a href="/exercises/new" class="menu create-session">Create Session</a>
-            <a href="#" class="menu previous-session">Previous Session</a>
-            <a href="#" class="menu exercise-database">View Exercise Database</a>
+            <div class="overlay-content">
+              <% if (user) { %>  
+                <a class="menu previous-session" href="/exercises/index" <%- exercise === 'Home Page' ? 'class="active"' : '' %>>Home Page</a>
+                  <a class="menu create-session" href="/exercises/new" <%- exercise === 'Create Session' ? 'class="active"' : '' %>>Create Session</a>
+                  <a href="/logout">LOG OUT</a>
+              <% } else { %>
+                  <a href="/auth/google" class="login">LOG IN&nbsp; <img id="google-logo" src="https://i.imgur.com/FHjYyi0.png"> </a>
+              <% } %>
           </div>
-        </div>
+          </div>
+        
       </section>
     
     </nav>

@@ -5,31 +5,30 @@ const url = process.env.DATABASE_URL;
 
 const exerciseRegimens = [{
     name: "Squat, Shoulder Press, Forward Lunge",
-    repset: [{
-        description: "Perform each exercise once per set, rest for 60 seconds and continue." ,
-        sets: 3,
-        reps: 15,
-        weight: 30,
-        equipment: "Kettlebell"
-    }]
-}, {
+    description: "Perform each exercise once per set, rest for 60 seconds and continue." ,
+    sets: 3,
+    reps: 15,
+    weight: 30,
+    equipment: "Kettlebell",
+    recap: []
+    },
+    {
     name: "Backward Lunge, Chest Press, Bicep Curls",
-    repset:[{
-        description: "Perform each exercise once per set, rest for 45 seconds and continue.",
-        sets: 4,
-        reps: 12,
-        weight: 25,
-        equipment: "Dumbbells"
-    }]
-}, {
+    description: "Perform each exercise once per set, rest for 45 seconds and continue.",
+    sets: 4,
+    reps: 12,
+    weight: 25,
+    equipment: "Dumbbells",
+    recap: []  
+    },
+    {
     name: "Calf Raises, Chest Flies, Tricep Press",
-    repset:[{
-        description: "Perform each exercise once per set, rest for 30 seconds and continue.",
-        sets: 5,
-        reps: 7,
-        weight: 20,
-        equipment: "Kettlebells"
-    }]
+    description: "Perform each exercise once per set, rest for 30 seconds and continue.",
+    sets: 5,
+    reps: 7,
+    weight: 20,
+    equipment: "Kettlebells",
+    recap: [] 
 }];
 
 

@@ -6,16 +6,16 @@
 <% if(user){%>
 <div><%= exercise.name%></div>
 <br>
-<% exercise.repset.forEach(function(repset)  {%>
-  <p>What to do: <%=repset.description%></p>
-  <p>How many sets: <%=repset.sets%></p>
-  <p>How many reps: <%=repset.reps%></p>
-  <p>How heavy: <%=repset.weight%></p>
-  <p>What to use: <%=repset.equipment%></p>
-<%})}%>
-<br>
-<br>
 
+  <p>What to do: <%=exercise.description%></p>
+  <p>How many sets: <%=exercise.sets%></p>
+  <p>How many reps: <%=exercise.reps%></p>
+  <p>How heavy: <%=exercise.weight%></p>
+  <p>What to use: <%=exercise.equipment%></p>
+<%}%>
+<br>
+<br>
+<h3><a href="/exercises">I don't want to do this workout</a></h3>
 </section>
 <!-- Edit Link -->
     <a href="/exercises/<%=exercise._id%>/edit">Edit</a>

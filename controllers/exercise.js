@@ -45,9 +45,7 @@ const exerciseController = {
       },
       update: async (req, res) => {
         try{
-            const editedExercise = await Exercise.findByIdAndUpdate(req.params.id, req.body);
-            req.session.editedExercise = editedExercise;
-            console.log(req.session.editedExercise.name);
+           await Exercise.findByIdAndUpdate(req.params.id, req.body);
             res.redirect(`/exercises/${req.params.id}`);    
           }catch(err){
             res.send(err)

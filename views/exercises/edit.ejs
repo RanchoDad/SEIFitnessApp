@@ -5,19 +5,19 @@
 
     <form method="POST" action="/exercises/<%=exerciseToEdit._id%>?_method=PUT"> 
         <label for="reps">Reps:</label>
-        <input value="<%=exerciseToEdit.repset.reps%>" type="number" name="reps" min="0" max="9999">
+        <input value="<%=exerciseToEdit.reps%>" type="number" name="reps" min="0" max="9999">
         <br>
         <br>
         <label for="sets">Sets:</label>
-        <input value="<%=exerciseToEdit.repset.sets%>" type="number" name="sets" min="0" max="9999">
+        <input value="<%=exerciseToEdit.sets%>" type="number" name="sets" min="0" max="9999">
         <br>
         <br>
         <label for="weight">Weight:</label>
-        <input value="<%=exerciseToEdit.repset.weight%>" type="number" name="weight" min="0" max="9999">
+        <input value="<%=exerciseToEdit.weight%>" type="number" name="weight" min="0" max="9999">
         <br>
         <br>
         <label for="rest">Description:</label>
-        <textarea name="description" rows="10" cols="35"><%= exerciseToEdit.repset.description %></textarea>
+        <textarea name="description" rows="10" cols="35"><%= exerciseToEdit.description %></textarea>
         <br>
         <button type="submit">Edit workout</button>
         <br>

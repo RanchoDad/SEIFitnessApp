@@ -3,17 +3,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema; 
 const User = require('./user');
 
-const repsetSchema = new Schema({
-  description: String,
-  sets: Number,
-  reps: Number,
-  weight: Number,
-  equipment: String
+const recapSchema = new Schema({
+  intensity: Number,
+  description: String
+},
+{  _id: false
 })
 
 const exerciseSchema = new Schema ({
   name: { type: String, required: true },
-  repset: [repsetSchema],
+  description: String,
+  sets: Number,
+  reps: Number,
+  weight: Number,
+  equipment: String,
+  recap: {
+    type: [recapSchema],
+    default: []
+  }
 })
 
 

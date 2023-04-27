@@ -10,7 +10,12 @@ const userSchema = new Schema({
     email: String,
     avatar: String
   }, {
-    timestamps: true
-  });
+    timestamps: true,
+    _id: {
+      type: Schema.Types.ObjectId,
+      auto: true
+    }
+  })
+    
 
   module.exports = mongoose.model('User', userSchema);

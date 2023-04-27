@@ -1,13 +1,12 @@
 <%- include('../partials/header') %>
 
-
-<section>
-    <h2>Choose Your Workout</h2>
-    <% exercises.forEach(function(exercise){%>
-    <ul class="index-exercise-list">
-        <li><a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a> </li>
-<%})%>
-    </ul>   
+<section class="workout-list">
+  <h2>Choose Your Workout</h2>
+  <% exercises.forEach(function(exercise){%>
+  <ul class="index-exercise-list">
+    <li><a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a></li>
+  </ul>
+  <%})%>
 </section>
 
 <%- include('../partials/footer') %>

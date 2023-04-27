@@ -8,7 +8,16 @@ const repsetSchema = new Schema({
   sets: Number,
   reps: Number,
   weight: Number,
-  equipment: String
+  equipment: String,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  userName: String,
+  userAvatar: String
+}, {
+  timestamps: true
 })
 
 const exerciseSchema = new Schema ({

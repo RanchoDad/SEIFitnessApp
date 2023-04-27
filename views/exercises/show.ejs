@@ -4,7 +4,13 @@
 <!-- (These components will be shown in this page) -->
 <div>Exercise:</div>
 <div><%= exercise.name%></div>
-<p><%= exercise.sets%></p>
+<% exercise.repset.forEach((set) => { %>
+  <p>Description: <%= set.description %></p>
+  <p>Sets: <%= set.sets %></p>
+  <p>Reps: <%= set.reps %></p>
+  <p>Weight: <%= set.weight %></p>
+  <p>Equipment: <%= set.equipment %></p>
+<% }) %>
 </section>
 <!-- Edit Link -->
     <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
@@ -30,35 +36,7 @@
     </select>
     <input type="submit" value="Add Notes">
    
-        <tbody>
-          <% let total = 0 %>
-          <% exercise.repset.forEach(function(r) { %>
-            <tr>
-                <!-- User -->
-              <td class="note-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-                <!-- Exercise -->
-              <td><%= r.exercise.name %></td>
-                <!-- Reps -->
-              <td><%= r.repset.rep %></td>
-                <!-- Sets -->
-              <td><%= r.repset.set %></td>
-                <!-- Weight -->
-                <td><%= r.repset.weight %></td>
-                <!-- Equipment -->
-                <td><%= r.repset.equipment %></td>
-              <td>
-                <% if (user?._id.equals(r.user)) { %>
-                <!-- Delete Button -->
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                
-              </td>
-            </tr>
-        </tbody>
-      </table>
-    <%  }else { %>
-      <h5>No History</h5>
-    <% }}) %>
+    
+       
 </form>
     <%- include('../partials/footer') %>

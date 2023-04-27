@@ -1,32 +1,33 @@
 <%- include('../partials/header') %>
 
-<h1>I am the show page</h1>
+I am the show page
 
 <!-- (These components will be shown in this page) -->
 <section class="workout-section">
-<div>Exercise:</div>
-<% if(user){%>
-<div><%= exercise.name%></div>
-<br>
-
+  <h1 class="title-greeting">Here's today's workout:</h1>
+  <% if(user){%>
+  <div class="workout-list-format"><%= exercise.name%></div>
+  <div class="workout-list">  
   <p>What to do: <%=exercise.description%></p>
   <p>How many sets: <%=exercise.sets%></p>
   <p>How many reps: <%=exercise.reps%></p>
   <p>How heavy: <%=exercise.weight%></p>
   <p>What to use: <%=exercise.equipment%></p>
-<%}%>
-<br>
-<br>
-<!-- <h3><a href="/exercises">I don't want to do this workout</a></h3> -->
-<form method="POST" action="/exercises/<%= exercise._id %>?_method=DELETE">
-  <button type="submit">Delete</button>
-</form>
-<!-- Edit Link -->
-    <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
-    <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
-        
-    </form>
-  </section>
+  <%}%>
+</div>
+  <br />
+  <br />
+  <!-- <h3><a href="/exercises">I don't want to do this workout</a></h3> -->
+  <form method="POST" action="/exercises/<%= exercise._id %>?_method=DELETE">
+    <button type="submit">Delete</button>
+  </form>
+  <!-- Edit Link -->
+  <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
+  <form
+    action="/exercises/<%=exercise._id%>?_method=DELETE"
+    method="POST"
+  ></form>
+</section>
 <!-- Adding performance notes(noteSchema) to exercise._id-->
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

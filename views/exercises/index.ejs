@@ -4,10 +4,10 @@
   <div>
     <div>
       <h1 class="title-greeting">Nice. Let's get to business.</h1>
-      <h3 class="sub-greeting">Choose Your Workout</h3>
+      <h2 class="sub-greeting">Choose Your Workout</h2>
     </div>
     <% exercises.forEach(function(exercise){%>
-    <ul class="index-exercise-list">
+    <ul class="workout-list">
       <li><a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a></li>
     </ul>
     <%})%>

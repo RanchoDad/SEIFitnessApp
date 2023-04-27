@@ -16,13 +16,17 @@ const exerciseController = {
    
     create: async (req, res) => {
         try {
-            const newExercise = await Exercise.create(req.body);
-            res.redirect(`/exercises/${newExercise._id}`);
-        }catch(err){
-            console.log(err);
-            res.render('exercises/new', { errorMsg: err.message});
+          const exercise = new Exercise({
+            name: req.body.name,
+            repset: req.body.repset
+          });
+          await exercise.save();
+          res.redirect(`/exercises/${exercise._id}`);
+        } catch (err) {
+          console.log(err);
+          res.render('exercises/new', { exercise: req.body, errors: err.errors });
         }
-    },
+      },
     
     show: async (req, res) => {
         console.log('this is the show route')

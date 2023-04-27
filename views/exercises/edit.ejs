@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-    <section class="container workout-list">
+    <section class="container workout-section">
         <h1>Edit your workout</h1>
-        <p class="title-workout-list"><%=exerciseToEdit.name%></p>
+        <p class="workout-list-format"><%=exerciseToEdit.name%></p>
         <form method="POST" action="/exercises/<%=exerciseToEdit._id%>?_method=PUT"> 
             <div class="row">
                 <label for="reps">Reps: <input value="<%=exerciseToEdit.reps%>" type="number" name="reps" min="0" max="9999">

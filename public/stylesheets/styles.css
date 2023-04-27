@@ -1,8 +1,9 @@
 /*CSS*/
 
+/*mobile first*/
 body {
   background-image: url(../images/Background.jpg);
-  width: 100%;
+  /* width: 100vw; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,33 +12,77 @@ body {
 
 #partial_header {
   height: 5rem;
+  width: 100vw;
   background-color: #003b6b;
   padding: 1rem 2rem;
 }
 
-.workout-list {
+/*homepage*/
+.splash-page {
+  margin-top: 4rem;
+  width: 440px;
+}
+
+/*ejs layout formats*/
+.title-greeting {
+  display: flex;
+  font-weight: bolder;
+  justify-content: center;
+  align-content: center;
+  font-size: 10vw;
+  text-align: center;
+}
+.title-greeting,
+.sub-greeting {
+  display: flex;
+  font-weight: bolder;
+  justify-content: center;
+  align-content: center;
+}
+
+.message {
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.workout-section {
   margin: 1.5rem;
 }
 
-.title-workout-list {
+.workout-list-format {
   font-weight: bolder;
   font-size: larger;
 }
 
+.index-exercise-list {
+  font-weight: bold;
+}
+
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover{
+  color: red;
+}
+
+
+/* the overlay (background) */
 #google-logo {
   height: 4rem;
   width: 4rem;
 }
 
-/* the overlay (background) */
 #overlay-menu {
   position: fixed;
-  top: 15px;
-  right: 20px;
+  top: 1rem;
+  right: 1rem;
   height: 4rem;
   width: 4rem;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #002340;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
   padding: 5px 5px;
   border: none;
   border-radius: 10%;
@@ -52,14 +97,14 @@ body {
 /* close button position */
 .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: 1rem;
+  right: 1rem;
   font-size: 60px;
 }
 
 /* overlay reveal*/
 .overlay {
-  height: 100%;
+  height: 100vh;
   width: 0;
   position: fixed;
   z-index: 2;
@@ -83,7 +128,7 @@ body {
 .overlay a {
   padding: 8px;
   text-decoration: none;
-  font-size: 60px;
+  font-size: 2.5rem;
   color: #ffffff;
   display: block;
   transition: 0.3s;
@@ -93,4 +138,38 @@ body {
 .overlay a:hover,
 .overlay a:focus {
   color: #464646;
+}
+
+
+/*desktop adjustments*/
+@media screen and (min-width: 1000px) {
+  
+  /*homepage*/
+  .splash-page {
+  }
+  
+  /*ejs layout formats*/
+  .title-greeting {
+    font-size: 4rem;
+  }
+  .title-greeting,
+  .sub-greeting {
+    /* font-weight: bolder; */
+  }
+  
+  .message {
+    font-size: 2rem;
+  }
+  
+  .workout-section {
+  }
+  
+  .workout-list-format {
+    /* font-weight: bolder;
+    font-size: larger; */
+  }
+  
+  .index-exercise-list {
+  }
+  
 }

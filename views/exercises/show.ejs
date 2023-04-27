@@ -3,6 +3,7 @@
 <h1>I am the show page</h1>
 
 <!-- (These components will be shown in this page) -->
+<section class="workout-section">
 <div>Exercise:</div>
 <% if(user){%>
 <div><%= exercise.name%></div>
@@ -17,12 +18,12 @@
 <br>
 <br>
 <h3><a href="/exercises">I don't want to do this workout</a></h3>
-</section>
 <!-- Edit Link -->
     <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
     <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
         
     </form>
+  </section>
 <!-- Adding performance notes(noteSchema) to exercise._id-->
 
     <%- include('../partials/footer') %>

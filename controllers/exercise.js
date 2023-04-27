@@ -18,7 +18,11 @@ const exerciseController = {
         try {
           const exercise = new Exercise({
             name: req.body.name,
-            repset: req.body.repset
+            sets:req.body.sets,
+            reps:req.body.reps,
+            weight:req.body.weight,
+            equipment:req.body.equipment,
+            description:req.body.description,
           });
           await exercise.save();
           res.redirect(`/exercises/${exercise._id}`);

@@ -3,6 +3,7 @@
 <h1>I am the show page</h1>
 <!-- (These components will be shown in this page) -->
 <div>Exercise:</div>
+<% if(user){%>
 <div><%= exercise.name%></div>
 <br>
 <% exercise.repset.forEach(function(repset)  {%>
@@ -11,7 +12,7 @@
   <p>How many reps: <%=repset.reps%></p>
   <p>How heavy: <%=repset.weight%></p>
   <p>What to use: <%=repset.equipment%></p>
-<%})%>
+<%})}%>
 <br>
 <br>
 

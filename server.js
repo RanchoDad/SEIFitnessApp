@@ -7,6 +7,8 @@ const express = require('express');
 const app = express();
 const db = require('./config/database');
 const passPortDb = require('./config/passport');
+const methodOverride = require('method-override')
+
 
 
 require('dotenv').config()
@@ -23,6 +25,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'))
 app.use(cookieParser());
 
 app.use(session({

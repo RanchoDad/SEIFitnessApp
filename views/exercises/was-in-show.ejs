@@ -1,3 +1,28 @@
+<form action="/:<%=exerciseToEdit._id%>?_method=PUT" method="POST">
+  <label for="reps">Reps:</label>
+  <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
+  <br>
+  <br>
+  <label for="sets">Sets:</label>
+  <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
+  <br>
+  <br>
+  <label for="weight">Weight:</label>
+  <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
+  <br>
+  <br>
+  <label for="rest">Rest (sec):</label>
+  <input value="<%=exercise.rest%>" type="number" name="rest" min="0" max="9999">
+  <br>
+       
+  <button type="submit">Edit workout</button>
+</form>
+
+
+
+
+
+
 <h3>Details</h3>
 
 

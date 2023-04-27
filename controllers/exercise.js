@@ -5,13 +5,11 @@ const exerciseController = {
     index: async (req, res) => {
         console.log('index works')
         const exercises = await Exercise.find({});
-        res.render('exercises/index', {
-            exercises
-        })
+        res.render('exercises/index', { exercise: 'Home Page', exercises })
     },
 
     new: (req, res)=> {
-        res.render('exercises/new')
+        res.render('exercises/new', { exercise: 'Create Session', errorMsg: '' })
     },
    
     create: async (req, res) => {

@@ -1,7 +1,7 @@
 // // google OAuth logging in/out code from mongoose-movies-master example
 
 const express = require('express');
-const router = express.Router();
+var router = express.Router();
 const passport = require('passport');
 const exerciseController = require('../controllers/exercise')
 
@@ -28,7 +28,7 @@ router.get('/oauth2callback', passport.authenticate(
 // // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/movies');
+    res.redirect('homepage');
   });
 });
 

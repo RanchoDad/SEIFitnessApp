@@ -1,17 +1,13 @@
 <%- include('../partials/header') %>
 
-<h1>The index page</h1>
+
 <section>
-<% let counter = 1 %>
-<% exercises.forEach(function(exercise){%>
-    <a href="/exercises/<%= exercise._id %>">Choose workout <%= counter%></a> 
-    <h3>Core:</h3>
-    <p><%=exercise.name%></p>
-    <h3>Lower body:</h3>
-        
-   
-    <% counter ++ %>
+    <h2>Choose Your Workout</h2>
+    <% exercises.forEach(function(exercise){%>
+    <ul class="index-exercise-list">
+        <li><a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a> </li>
 <%})%>
+    </ul>   
 </section>
 
 <%- include('../partials/footer') %>

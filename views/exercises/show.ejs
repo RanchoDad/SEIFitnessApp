@@ -4,7 +4,17 @@
 <!-- (These components will be shown in this page) -->
 <div>Exercise:</div>
 <div><%= exercise.name%></div>
-<p><%= exercise.sets%></p>
+<br>
+<% exercise.repset.forEach(function(repset)  {%>
+  <p>What to do: <%=repset.description%></p>
+  <p>How many sets: <%=repset.sets%></p>
+  <p>How many reps: <%=repset.reps%></p>
+  <p>How heavy: <%=repset.weight%></p>
+  <p>What to use: <%=repset.equipment%></p>
+<%})%>
+<br>
+<br>
+
 </section>
 <!-- Edit Link -->
     <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
@@ -12,53 +22,5 @@
         
     </form>
 <!-- Adding performance notes(noteSchema) to exercise._id-->
-<h3>Details</h3>
 
-
-<form action="/exercises/<%=exercise._id%>/notes" method="POST" id="repset">
-    <label for="reps">Reps:</label>
-    <input type="number" name="repset.reps" min="0" max="9999">
-    <br>
-    <label for="sets">Sets:</label>
-    <input type="number" name="repset.sets" min="0" max="9999">
-    <br>
-    <label for="weight">Weight:</label>
-    <input type="number" name="repset.weight" min="0" max="9999">
-    <br>
-    <label for="equipment">equipment:</label>
-    <input type="text" name="repset.equipment">
-    </select>
-    <input type="submit" value="Add Notes">
-   
-        <tbody>
-          <% let total = 0 %>
-          <% exercise.repset.forEach(function(r) { %>
-            <tr>
-                <!-- User -->
-              <td class="note-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-                <!-- Exercise -->
-              <td><%= r.exercise.name %></td>
-                <!-- Reps -->
-              <td><%= r.repset.rep %></td>
-                <!-- Sets -->
-              <td><%= r.repset.set %></td>
-                <!-- Weight -->
-                <td><%= r.repset.weight %></td>
-                <!-- Equipment -->
-                <td><%= r.repset.equipment %></td>
-              <td>
-                <% if (user?._id.equals(r.user)) { %>
-                <!-- Delete Button -->
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                
-              </td>
-            </tr>
-        </tbody>
-      </table>
-    <%  }else { %>
-      <h5>No History</h5>
-    <% }}) %>
-</form>
     <%- include('../partials/footer') %>

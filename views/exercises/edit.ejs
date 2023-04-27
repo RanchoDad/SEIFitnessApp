@@ -2,9 +2,13 @@
 
     <section class="container workout-section">
         <h1>Edit your workout</h1>
-        <p class="workout-list-format"><%=exerciseToEdit.name%></p>
+        <p class="workout-list-format"><%=exerciseToEdit%></p>
         <form method="POST" action="/exercises/<%=exerciseToEdit._id%>?_method=PUT"> 
+            
             <div class="row">
+                <label for="name">Name: <input value="<%=exerciseToEdit.name%>" type="text" name="name">
+                </label>
+            </div><div class="row">
                 <label for="reps">Reps: <input value="<%=exerciseToEdit.reps%>" type="number" name="reps" min="0" max="9999">
                 </label>
             </div>

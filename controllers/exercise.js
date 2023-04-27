@@ -39,20 +39,36 @@ const exerciseController = {
         })
     },
     edit: async (req, res) => {
-        try{
-          const exerciseToEdit = await Exercise.findById(req.params.id);
-          console.log(exerciseToEdit);
-          res.render('exercises/edit', {
-              exerciseToEdit
-          })
+        try{ 
+           const exerciseToEdit = await Exercise.findOne({
+            _id: req.params.id});
+            if (exerciseToEdit) {
+                req.session.currentExercise = exerciseToEdit;
+                console.log(req.session.currentExercise);
+                return res.render('exercises/edit', {
+                    exerciseToEdit: exerciseToEdit
+                  });
+                }
+             res.redirect('/exercises');            
         }catch(err){
           res.send(err)
         }
-      },
+    },
       update: async (req, res) => {
         try{
-           await Exercise.findByIdAndUpdate(req.params.id, req.body);
-            res.redirect(`/exercises/${req.params.id}`);    
+            const currentExercise = req.session.currentExercise;
+            console.log('currentExercise:', currentExercise);
+            console.log(req.body);
+            if (currentExercise){
+                currentExercise.name = req.body.name;
+                currentExercise.reps = req.body.reps;
+                currentExercise.sets = req.body.sets;
+                currentExercise.weight = req.body.weight;
+                currentExercise.equipment = req.body.equipment;
+                currentExercise.description = req.body.description;
+                await currentExercise.save();
+                res.redirect(`/exercises/${currentExercise._id}`); 
+            }  
           }catch(err){
             res.send(err)
           }

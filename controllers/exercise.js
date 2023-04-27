@@ -27,6 +27,7 @@ const exerciseController = {
     show: async (req, res) => {
         console.log('this is the show route')
         const exercise = await Exercise.findById(req.params.id);
+        console.log(exercise)
         res.render('exercises/show', {
             exercise
         })

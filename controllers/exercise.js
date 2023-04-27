@@ -55,16 +55,16 @@ const exerciseController = {
             res.send(err)
           }
         },
-    //delete: async (req, res) => {
-    // try {
-    //     const deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
-    //     res. <----need to determine if we're going back to other exercises
-    //               or the 'show' page ---->
-    //   }catch(err){
-    //     res.send(err)
-    //   }
-    // },
-    //
+        delete: async (req, res) => {
+            try {
+              const exerciseId = req.params.id;
+              await Exercise.findByIdAndDelete(exerciseId);
+              res.redirect('/exercises');
+            } catch (error) {
+              console.error(error);
+              res.status(500).send('An error occurred while deleting the exercise.');
+            }
+          },
     
     //createApi
     // in order for this to work, I have to write codes in movieAddValidator.js

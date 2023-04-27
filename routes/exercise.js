@@ -10,7 +10,7 @@ router.get('/:id', exerciseController.show);
 
 router.post('/', exerciseController.create);
 
-// router.delete('/:id',  exerciseController.delete);   
+router.delete('/:id',  exerciseController.delete);   
 
 router.get('/:id/edit', exerciseController.edit);    
 

@@ -32,7 +32,27 @@ const exerciseController = {
             exercise
         })
     },
-
+    edit: async (req, res) => {
+        try{
+          const exerciseToEdit = await Exercise.findById(req.params.id);
+          console.log(exerciseToEdit);
+          res.render('exercises/edit', {
+              exerciseToEdit
+          })
+        }catch(err){
+          res.send(err)
+        }
+      },
+      update: async (req, res) => {
+        try{
+            const editedExercise = await Exercise.findByIdAndUpdate(req.params.id, req.body);
+            req.session.editedExercise = editedExercise;
+            console.log(req.session.editedExercise.name);
+            res.redirect(`/exercises/${req.params.id}`);    
+          }catch(err){
+            res.send(err)
+          }
+        },
     //delete: async (req, res) => {
     // try {
     //     const deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
@@ -42,25 +62,7 @@ const exerciseController = {
     //     res.send(err)
     //   }
     // },
-
-    //edit: async (req, res) => {
-//     try{
-//       const editedExercise = await Exercise.findById(req.params.id)
-//       res.render('exercises/edit', {
-//           editedExercise
-//       })
-//     }catch(err){
-//       res.send(err)
-//     }
-//   },
-    //update: async (req, res) => {
-    // try{
-    //     await Exercise.findByIdAndUpdate(req.params.id, req.body)
-    //     res.redirect(`/exercises/${req.params.id}`)    
-    //   }catch(err){
-    //     res.send(err)
-    //   }
-    // },
+    //
     
     //createApi
     // in order for this to work, I have to write codes in movieAddValidator.js

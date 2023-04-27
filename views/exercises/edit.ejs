@@ -1,149 +1,28 @@
 <%- include('../partials/header') %>
 
     <h1>Edit your workout</h1>
-    <form action="/" method="GET">
-        <!-- date -->
-        <label for="DATE">DATE:</label>
-        <input value="<%=exercise.performedDate%>" id="DATE" type="datetime-local" name="date" value="<%= new Date(Date.now() + (365 * 24 * 60 * 60 * 1000)).toISOString().substr(0,16) %>" required>
-        <br>
-        <!-- exercise selection based on the movement-->
-        <label for="MOVEMENT">Squat:</label>
-            <select value="<%=exercise.squat%>" name="MOVEMENT" id="MOVEMENT">
-                <option value="1">Back Squat</option>
-                <option value="1">Front Squat</option>
-                <option value="1">1-Leg Squat</option>
-                <option value="1">Goblet Squat</option>
-                <option value="1">Wall Sit</option>
-                <option value="1">Squat</option>
-                <option value="1">Leg Press</option>
-                <option value="1">1-Leg Leg Press</option>
-                <option value="1">Sumo Squat</option>
-                <option value="1">Split Squat</option>
-                <option value="1">Bulgarian Squat</option>
-                <option value="1">Overhead Squat</option>
-                <option value="1">Suitcase Squat</option>
-                <option value="1">Zercher Squat</option>
-            </select>
-        <label for="MOVEMENT">Hinge:</label>
-            <select value="<%=exercise.hinge%>" name="MOVEMENT" id="MOVEMENT">
-                <option value="1"></option>Deadlift</option>
-                <option value="1">Sumo Deadlift</option>
-                <option value="1">RDL</option>
-                <option value="1">1-Leg RDL</option>
-                <option value="1">Sumo Deadlift</option>
-                <option value="1">Good Morning</option>
-                <option value="1">Pull Throughs</option>
-                <option value="1">KB Swing</option>
-                <option value="1">Straight Leg Deadlift</option>
-                <option value="1">Hip Extension</option>
-                <option value="1">Back Extension</option>
-                <option value="1">Bridge</option>
-                <option value="1">Swing</option>
-            </select>
-        <label for="MOVEMENT">Lunge:</label>
-            <select value="<%=exercise.lunge%>"name="MOVEMENT" id="MOVEMENT">
-                <option value="">Step Up</option>
-                <option value="">Side Step Up</option>
-                <option value="">Step Down</option>
-                <option value="">Transverse Lunge</option>
-                <option value="">Forward Lunge</option>
-                <option value="">Side Lunge</option>
-                <option value="">Reverse Lunge</option>
-                <option value="">Walking Lunge</option>
-                <option value="">3-Way Lunge</option>
-                <option value="">Clock Lunge</option>
-                <option value="">Drop Lunge</option>
-                <option value="">Bulgarain Lunge</option>
-                <option value="">Stationary Lunge</option>
-                <option value="">Crossover Lunge</option>
-            </select>
-        <label for="MOVEMENT">Pull:</label>
-            <select value="<%=exercise.pull%>"name="MOVEMENT" id="MOVEMENT">
-                <option value="">Pull Up</option>
-                <option value="">Chin Up</option>
-                <option value="">Pulldown</option>
-                <option value="">Reverse Grip Chin Up</option>
-                <option value="">Neutral Grip Chin Up</option>
-                <option value="">Medium Grip Chin Up</option>
-                <option value="">Wide Grip Pull Up</option>
-                <option value="">Row</option>
-                 <option value="">Face Pull</option>
-            </select>
-        <label for="MOVEMENT">Press:</label>
-            <select value="<%=exercise.press%>" name="MOVEMENT" id="MOVEMENT">
-                <option value="1">Push Up</option>
-                <option value="2">Kneeling Push Up</option>
-                <option value="3">Incline Push Up</option>
-                <option value="4">Decline Push Up</option>
-                <option value="5">Incline Chest Press</option>
-                <option value="6">Flat Chest Press</option>
-                <option value="7">Decline Chest Press</option>
-                <option value="8">Incline Chest Fly</option>
-                <option value="9">Flat Chest Fly</option>
-                <option value="10">Decline Chest Fly</option>
-                <option value="11">Push Up</option>
-                <option value="12">T Push Up</option>
-                <option value="13">Floor Press</option>
-                <option value="14">Standing Shoulder Press</option>
-                <option value="15">Seated Shoulder Press</option>
-                <option value="16">1-Arm Standing Shoulder Press</option>
-                <option value="17">1-Arm Seated Shoulder Press</option>
-                <option value="18">Arnold Press</option>
-                <option value="19">Modified Arnold Press</option>
-                <option value="20">Push Press</option>
-            </select>
-        <label for="MOVEMENT">Core:</label>
-            <select value="<%=exercise.core%>" name="MOVEMENT" id="MOVEMENT">
-                <option value="">'Kneeling Plank</option>   
-                <option value="">'Plank',</option>
-                <option value="">'3-Point Plank',</option>
-                <option value="">'2-Point Plank',</option>
-                <option value="">'Plank with 1-Arm Row',</option>
-                <option value="">'Ab Rollout',</option>
-                <option value="">'Body Saw',</option>
-                <option value="">'Stir the Pot',</option>
-                <option value="">'Crunch',</option>
-                <option value="">'Reverse Crunch',</option>
-                <option value="">'Jackknife',</option>
-                <option value="">'Pike'</option>
-            </select>
-            <br>
-        <!-- equipment selection -->
-        <label for="EQUIPMENT">EQUIPMENT:</label>
-        <select value="<%=exercise.equipment%>"id="EQUIPMENT" name="EQUIPMENT">
-            <option value="BB">BB</option>
-            <option value="DB"></option>
-            <option value="Cable"></option>
-            <option value="Bodyweight"></option>
-            <option value="Band">Band</option>
-            <option value="TRX">TRX</option>
-            <option value="KB">KB</option>
-            <option value="Machine">Machine</option>
-            <option value="Mini Band">Mini Band</option>
-            <option value="BOSU">BOSU</option>
-            <option value="BalanceBeam">Balance Beam</option>
-            <option value="Foam-Balance-Pad">Foam Balance Pad</option>
-            <option value="Slidingdisc">Sliding Disc</option>
-        </select>
-        <br>
-        <br>
+    <p><%=exerciseToEdit.name%></p>
+
+    <form method="POST" action="/exercises/<%=exerciseToEdit._id%>?_method=PUT"> 
         <label for="reps">Reps:</label>
-        <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
+        <input value="<%=exerciseToEdit.repset.reps%>" type="number" name="reps" min="0" max="9999">
         <br>
         <br>
         <label for="sets">Sets:</label>
-        <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
+        <input value="<%=exerciseToEdit.repset.sets%>" type="number" name="sets" min="0" max="9999">
         <br>
         <br>
         <label for="weight">Weight:</label>
-        <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
+        <input value="<%=exerciseToEdit.repset.weight%>" type="number" name="weight" min="0" max="9999">
         <br>
         <br>
-        <label for="rest">Rest (sec):</label>
-        <input value="<%=exercise.rest%>" type="number" name="rest" min="0" max="9999">
+        <label for="rest">Description:</label>
+        <textarea name="description" rows="10" cols="35"><%= exerciseToEdit.repset.description %></textarea>
         <br>
         <button type="submit">Edit workout</button>
-    </form>
-    <!--  -->
+        <br>
+
+
+
 
     <%- include('../partials/footer') %>

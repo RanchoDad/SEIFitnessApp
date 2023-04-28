@@ -17,6 +17,8 @@
     <p><span class="workout-label">How many reps:</span> <%=exercise.reps%></p>
     <p><span class="workout-label">How heavy:</span> <%=exercise.weight%></p>
     <p><span class="workout-label">What to use:</span> <%=exercise.equipment%></p>
+    <%} else {%>
+    <p class="workout-label">Sorry, you cannot edit this workout unless you made it. Head to the menu and create a new workout!</p>
     <%}%>
   </div>
   <br />
@@ -26,7 +28,7 @@
     <button class="btn btn-secondary">
       <a href="/exercises">Back</a>
     </button>
-
+    
     <button class="btn btn-secondary">
       <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
         <a href="/exercises/<%=exercise._id%>/edit">Edit</a>

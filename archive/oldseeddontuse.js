@@ -1,4 +1,4 @@
-const Exercise = require('./models/exercise');
+const Exercise = require('../models/exercise');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 

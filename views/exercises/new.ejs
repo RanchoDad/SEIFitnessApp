@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>New Exercise</h1>
+	<div class="create-form">
 	<form method="POST" action="/exercises">
 		<label>Name:</label>
 		<input type="text" name="name" required>
@@ -22,5 +23,5 @@
 		<br>  
 		<input type="submit" value="Save">
 	</form>
-
+	</div>
     <%- include('../partials/footer') %>

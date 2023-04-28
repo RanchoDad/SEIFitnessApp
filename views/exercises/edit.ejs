@@ -1,35 +1,62 @@
 <%- include('../partials/header') %>
 
-    <section class="container workout-section">
-        <h1>Edit your workout</h1>
-        <p class="workout-list-format"><%=exercise.name%></p>
-        <form method="POST" action="/exercises/<%=exercise._id%>?_method=PUT"> 
-            
-            <div class="row">
-                <label for="name">Name: <input value="<%=exercise.name%>" type="text" name="name">
-                </label>
-            </div><div class="row">
-                <label for="reps">Reps: <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
-                </label>
-            </div>
-            <div class="row">
-                <label for="sets">Sets: <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
-                </label>
-            </div>
-            <div class="row">
-                <label for="weight">Weight: <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
-                </label>
-            </div>
-            <div class="equipment">
-                <label>Equipment: <input value="<%=exercise.equipment%>" type="text" name="equipment"></label>
-            </div>
-            <div class="row">
-                <label for="rest">Description: <textarea name="description" rows="10" cols="35"><%= exercise.description %></textarea>
-                </label>
-            </div>
-            <div class="row">
-                <button type="submit">Edit workout</button>
-            </div>
+<!-- insert img -->
+    <section class="workout-section">
+        <h1 class="sub-greeting">New Workout</h1>
+        <div class="workout-details">	
+        <form method="POST" action="/exercises">
+            <p><span class="workout-label">Name: </span><input value="<%=exercise.name%>" type="text" name="name"></p>
+            <p><span class="workout-label">Sets: </span><input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999"></p>
+            <p><span class="workout-label">Reps: </span><input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999"></p>
+            <p><span class="workout-label">Weight: </span><input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999"></p>
+            <p><span class="workout-label">Equipment: </span><input value="<%=exercise.equipment%>" type="text" name="equipment"></p>
+            <p><span class="workout-label">Description: </span><textarea name="description" rows="10" cols="35"><%= exercise.description %></textarea></p>
+        </form>
+        </div>
     </section>
+    
+<!-- button mods -->
+<div class="menu-options">
+	<button class="btn btn-secondary">
+		<a href="/exercises">Back</a>
+	</button>
+
+	<button class="btn btn-secondary" type="submit" value="Save">
+		Save
+	</button>
+</div>
 
 <%- include('../partials/footer') %>
+
+<!-- previous code. saved as a just in case -->
+<!-- <section class="container workout-section">
+    <h1>Edit your workout</h1>
+    <p class="workout-list-format"><%=exercise.name%></p>
+    <form method="POST" action="/exercises/<%=exercise._id%>?_method=PUT"> 
+        
+        <div class="row">
+            <label for="name">Name: <input value="<%=exercise.name%>" type="text" name="name">
+            </label>
+        </div><div class="row">
+            <label for="reps">Reps: <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
+            </label>
+        </div>
+        <div class="row">
+            <label for="sets">Sets: <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
+            </label>
+        </div>
+        <div class="row">
+            <label for="weight">Weight: <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
+            </label>
+        </div>
+        <div class="equipment">
+            <label>Equipment: <input value="<%=exercise.equipment%>" type="text" name="equipment"></label>
+        </div>
+        <div class="row">
+            <label for="rest">Description: <textarea name="description" rows="10" cols="35"><%= exercise.description %></textarea>
+            </label>
+        </div>
+        <div class="row">
+            <button type="submit">Edit workout</button>
+        </div>
+</section> -->

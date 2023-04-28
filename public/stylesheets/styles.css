@@ -159,6 +159,11 @@ a:hover{
   color: #464646;
 }
 
+/* index li's */
+.workout-list {
+  list-style-type: none;
+  color:rgba(76, 87, 111, 0.95)
+}
 
 /*desktop adjustments*/
 @media screen and (min-width: 1000px) {

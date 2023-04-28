@@ -44,14 +44,15 @@ Screenshots
 Technologies Used
 
 
--JavaScript
--HTML
--CSS
--Bootstrap
--Express
--Node.js
--Mongoose
--MongoDB
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
+- Express
+- Node.js
+- Mongoose
+- MongoDB
+- Fly.io
 
 ----------------------------------------
 Getting Started

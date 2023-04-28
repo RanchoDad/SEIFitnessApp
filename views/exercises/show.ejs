@@ -28,18 +28,16 @@
     <button class="btn btn-secondary">
       <a href="/exercises">Back</a>
     </button>
-    
+    <%if(user){%>
     <button class="btn btn-secondary">
-      <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
         <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
-      </form>
     </button>
-
+    <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
     <button class="btn btn-secondary" type="submit">
-      <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
         Delete
-      </form>
     </button>
+  </form>
+  <%}%>
   </div>
 </section>
 

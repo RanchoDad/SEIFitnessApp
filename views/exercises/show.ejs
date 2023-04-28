@@ -4,9 +4,9 @@
 <!-- (These components will be shown in this page) -->
 <section class="workout-section">
   <h1 class="title-greeting">Lets get to work!</h1>
-  <p>
+  <!-- <p> insert img/rdm img gen
     <img src="" alt="">
-  </p>
+  </p> -->
   <% if(user){%>
   <div class="posted-workout">
     <%= exercise.name%>
@@ -34,10 +34,7 @@
     </button>
 
     <button class="btn btn-secondary" type="submit">
-      <form
-        action="/exercises/<%= exercise._id %>?_method=DELETE"
-        method="POST"
-      >
+      <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
         Delete
       </form>
     </button>

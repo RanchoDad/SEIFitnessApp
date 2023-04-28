@@ -42,6 +42,7 @@ const exerciseController = {
     edit: async (req, res) => {
         try{ 
            const exercise = await Exercise.findByIdAndUpdate(req.params.id);
+           console.log(req.user._id, exercise.user)
            if (req.user._id.toString() === exercise.user.toString()) {
                 return res.render('exercises/edit', {
                     exercise
@@ -79,7 +80,6 @@ const exerciseController = {
                 await Exercise.findByIdAndDelete(exercise);
                res.redirect('/exercises');
               }else{
-                res.status(500).send('You did not create, you cannot delete');
                 res.redirect('/exercises');
               }
             } catch (error) {

@@ -3,27 +3,38 @@
 <!-- insert img -->
 <section class="workout-section">
 	<h1 class="sub-greeting">New Workout</h1>
-	<div class="workout-details">	
 	<form method="POST" action="/exercises">
-		<p><span class="workout-label">Name: </span><input type="text" name="name" required></p>
-		<p><span class="workout-label">Sets: </span><input type="number" name="sets" min="0" max="9999"></p>
-		<p><span class="workout-label">Reps: </span><input type="number" name="reps" min="0" max="9999"></p>
-		<p><span class="workout-label">Weight: </span><input type="number" name="weight" min="0" max="9999"></p>
-		<p><span class="workout-label">Equipment: </span><input type="text" name="equipment"></p>
-		<p><span class="workout-label">Description: </span><textarea name="description"></textarea></p>
-	</form>
-	</div>
-</section>
-
-<!-- button mods -->
+	<div class="workout-details">	
+		<label class ="workout-label">Name:</label>
+        <input type="text" name="name" required>
+        <br>
+        <label class ="workout-label">Sets:</label>
+        <input type="number" name="sets" min="0" max="9999">
+        <br>
+        <label class ="workout-label">Reps:</label>
+        <input type="number" name="reps" min="0" max="9999">
+        <br>
+        <label class ="workout-label">Weight:</label>
+        <input type="number" name="weight" min="0" max="9999">
+        <br>
+        <label class ="workout-label">Equipment:</label>
+        <input type="text" name="equipment">
+        <br>
+    <label class ="workout-label">Description:</label>
+        <textarea name="description"></textarea>
+        <br>
+        
+		<!-- button mods -->
 <div class="menu-options">
 	<button class="btn btn-secondary">
 		<a href="/exercises">Back</a>
 	</button>
-
 	<button class="btn btn-secondary" type="submit" value="Save">
 		Save
 	</button>
+	</div>
 </div>
+</form>
+</section>
 
 <%- include('../partials/footer') %>

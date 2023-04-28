@@ -21,9 +21,10 @@ const exerciseController = {
             weight:req.body.weight,
             equipment:req.body.equipment,
             description:req.body.description,
+            user: req.user._id
           });
-          await exercise.save();
-          res.redirect(`/exercises/${exercise._id}`);
+            await exercise.save();
+            res.redirect(`/exercises/${exercise._id}`);
         } catch (err) {
           console.log(err);
           res.render('exercises/new', { exercise: req.body, errors: err.errors });
@@ -40,47 +41,49 @@ const exerciseController = {
     },
     edit: async (req, res) => {
         try{ 
-           const exerciseToEdit = await Exercise.findOne({
-            _id: req.params.id});
-            if (exerciseToEdit) {
-                req.session.currentExercise = exerciseToEdit;
-                console.log(req.session.currentExercise);
+           const exercise = await Exercise.findByIdAndUpdate(req.params.id);
+           if (req.user._id.toString() === exercise.user.toString()) {
                 return res.render('exercises/edit', {
-                    exerciseToEdit: exerciseToEdit
+                    exercise
                   });
-                }
-             res.redirect('/exercises');            
+                }else{
+             res.redirect('/exercises');
+                }            
         }catch(err){
           res.send(err)
         }
     },
       update: async (req, res) => {
         try{
-            const currentExercise = req.session.currentExercise;
-            console.log('currentExercise:', currentExercise);
-            console.log(req.body);
-            if (currentExercise){
-                currentExercise.name = req.body.name;
-                currentExercise.reps = req.body.reps;
-                currentExercise.sets = req.body.sets;
-                currentExercise.weight = req.body.weight;
-                currentExercise.equipment = req.body.equipment;
-                currentExercise.description = req.body.description;
-                await currentExercise.save();
-                res.redirect(`/exercises/${currentExercise._id}`); 
-            }  
+          const exercise = await Exercise.findById(req.params.id);
+          if (req.user._id.toString() === exercise.user.toString()) {
+            exercise.name = req.body.name;
+            exercise.reps = req.body.reps;
+            exercise.sets = req.body.sets;
+            exercise.weight = req.body.weight;
+            exercise.equipment = req.body.equipment;
+            exercise.description = req.body.description;
+                await exercise.save();
+                res.redirect(`/exercises/${exercise._id}`); 
+            }else{
+              res.redirect('/exercises');
+            }
           }catch(err){
             res.send(err)
           }
         },
         delete: async (req, res) => {
             try {
-              const exerciseId = req.params.id;
-              await Exercise.findByIdAndDelete(exerciseId);
-              res.redirect('/exercises');
+              const exercise = await Exercise.findById(req.params.id);
+              if (req.user._id.toString() === exercise.user.toString()) {
+                await Exercise.findByIdAndDelete(exercise);
+               res.redirect('/exercises');
+              }else{
+                res.status(500).send('You did not create, you cannot delete');
+                res.redirect('/exercises');
+              }
             } catch (error) {
-              console.error(error);
-              res.status(500).send('An error occurred while deleting the exercise.');
+              res.send(error)
             }
           },
     

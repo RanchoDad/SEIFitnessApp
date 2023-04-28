@@ -2,29 +2,29 @@
 
     <section class="container workout-section">
         <h1>Edit your workout</h1>
-        <p class="workout-list-format"><%=exerciseToEdit%></p>
-        <form method="POST" action="/exercises/<%=exerciseToEdit._id%>?_method=PUT"> 
+        <p class="workout-list-format"><%=exercise.name%></p>
+        <form method="POST" action="/exercises/<%=exercise._id%>?_method=PUT"> 
             
             <div class="row">
-                <label for="name">Name: <input value="<%=exerciseToEdit.name%>" type="text" name="name">
+                <label for="name">Name: <input value="<%=exercise.name%>" type="text" name="name">
                 </label>
             </div><div class="row">
-                <label for="reps">Reps: <input value="<%=exerciseToEdit.reps%>" type="number" name="reps" min="0" max="9999">
+                <label for="reps">Reps: <input value="<%=exercise.reps%>" type="number" name="reps" min="0" max="9999">
                 </label>
             </div>
             <div class="row">
-                <label for="sets">Sets: <input value="<%=exerciseToEdit.sets%>" type="number" name="sets" min="0" max="9999">
+                <label for="sets">Sets: <input value="<%=exercise.sets%>" type="number" name="sets" min="0" max="9999">
                 </label>
             </div>
             <div class="row">
-                <label for="weight">Weight: <input value="<%=exerciseToEdit.weight%>" type="number" name="weight" min="0" max="9999">
+                <label for="weight">Weight: <input value="<%=exercise.weight%>" type="number" name="weight" min="0" max="9999">
                 </label>
             </div>
             <div class="equipment">
-                <label>Equipment: <input value="<%=exerciseToEdit.equipment%>" type="text" name="equipment"></label>
+                <label>Equipment: <input value="<%=exercise.equipment%>" type="text" name="equipment"></label>
             </div>
             <div class="row">
-                <label for="rest">Description: <textarea name="description" rows="10" cols="35"><%= exerciseToEdit.description %></textarea>
+                <label for="rest">Description: <textarea name="description" rows="10" cols="35"><%= exercise.description %></textarea>
                 </label>
             </div>
             <div class="row">

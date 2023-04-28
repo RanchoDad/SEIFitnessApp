@@ -6,17 +6,70 @@ Stargate - 04192341412
 
 SEIFitness App
 
-User begins by logging into the app. From there, they are able to view exercise (index) from our fitness databse. They can create a workout session (new, create), adding, editing, and deleting exercises in their session (show, edit, delete).
 
-Exercises in the database will have type attributes (Schema), allowing them to be seperated or organized select exercises. They can even rate an exercises and view ratings, completed reps and sets, among other details (embedded schema).
+Stargate - 04192341412
 
-While a user will have acccess to the database of exercises and exercise ratings, only by authenication/authorized user can they create sessions, edit their history, and attach reviews.
+--------------------------------------
+
+SEIFitness App
+
+
+Our app is mobile friendly first. The welcome page displays an introduction to the app before a user logs in to view the library of workouts. 
+
+
+Next, a user can choose from the available workouts or open the menu and create their own. 
+
+
+When a user chooses an existing workout they are directed to a page which displays directions for the workout including sets, reps, weights and equipment.
+
+
+If a user chooses to create their own workout, they can determine directions for the workout including sets, reps, weights and equipment.
+
+
+A user has the ability to change or remove their own workouts.
+
 
 ----------------------------------------
-Stargate - 044453499181
 
-Google OAuth is configured and the server runs. Skeleton complete! 4.23
+Screenshots
 
---------
 
-This is a test to work. 
+![Alt text](app-screenshots/welcomepage.png)
+
+![Alt text](app-screenshots/log-in-overlay.png)
+
+![Alt text](app-screenshots/logged-in-overlay.png)
+----------------------------------------
+
+Technologies Used
+
+
+-JavaScript
+-HTML
+-CSS
+-Bootstrap
+-Express
+-Node.js
+-Mongoose
+-MongoDB
+
+----------------------------------------
+Getting Started
+
+
+https://seifitnessapp.fly.dev/
+
+----------------------------------------
+Next Steps
+
+
+Future Enhancements
+
+-A user would be able to select specific exercises from a drop down menu when creating their workout.
+
+-A user would be able to select equipment from a drop down menu when creating their workout.
+
+-A user would be able to record the intensity, reps, sets, etc and other details of their workout, similar to a review.
+
+-A user would be able to select a workout and place it in a calendar in order to plan a series of workouts.
+

@@ -60,6 +60,7 @@ App link:
 https://seifitnessapp.fly.dev/
 
 
+
 Trello:
 https://trello.com/b/lYlrjgcm/sei-fitness-app-tasks
 

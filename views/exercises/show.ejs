@@ -1,34 +1,49 @@
 <%- include('../partials/header') %>
 
-I am the show page
-
+<!-- I am the show page -->
 <!-- (These components will be shown in this page) -->
 <section class="workout-section">
-  <h1 class="title-greeting">Here's today's workout:</h1>
+  <h1 class="title-greeting">Lets get to work!</h1>
+  <p>
+    <img src="" alt="">
+  </p>
   <% if(user){%>
-  <div class="workout-list-format"><%= exercise.name%></div>
-  <div class="workout-list">  
-  <p>What to do: <%=exercise.description%></p>
-  <p>How many sets: <%=exercise.sets%></p>
-  <p>How many reps: <%=exercise.reps%></p>
-  <p>How heavy: <%=exercise.weight%></p>
-  <p>What to use: <%=exercise.equipment%></p>
-  <%}%>
-</div>
+  <div class="posted-workout">
+    <%= exercise.name%>
+  </div>
+  <div class="workout-details">
+    <p><span class="workout-label">Instructions:</span> <%=exercise.description%></p>
+    <p><span class="workout-label">How many sets:</span> <%=exercise.sets%></p>
+    <p><span class="workout-label">How many reps:</span> <%=exercise.reps%></p>
+    <p><span class="workout-label">How heavy:</span> <%=exercise.weight%></p>
+    <p><span class="workout-label">What to use:</span> <%=exercise.equipment%></p>
+    <%}%>
+  </div>
   <br />
   <br />
-  <!-- Edit Link -->
-  <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
-  <form
-    action="/exercises/<%=exercise._id%>?_method=DELETE"
-    method="POST"></form>
-    <!-- <h3><a href="/exercises">I don't want to do this workout</a></h3> -->
-  <form method="POST" action="/exercises/<%= exercise._id %>?_method=DELETE">
-    <button type="submit">Delete</button>
-  </form>
+
+  <div class="menu-options">
+    <button class="btn btn-secondary">
+      <a href="/exercises">Back</a>
+    </button>
+
+    <button class="btn btn-secondary">
+      <form action="/exercises/<%=exercise._id%>?_method=DELETE" method="POST">
+        <a href="/exercises/<%=exercise._id%>/edit">Edit</a>
+      </form>
+    </button>
+
+    <button class="btn btn-secondary" type="submit">
+      <form
+        action="/exercises/<%= exercise._id %>?_method=DELETE"
+        method="POST"
+      >
+        Delete
+      </form>
+    </button>
+  </div>
 </section>
-<!-- Back to index -->
-<a href="/exercises">Back</a>
+
 <!-- Adding performance notes(noteSchema) to exercise._id-->
 
 <%- include('../partials/footer') %>

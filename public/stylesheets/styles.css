@@ -24,6 +24,7 @@ body {
 }
 
 /*ejs layout formats*/
+/*splash page*/
 .title-greeting {
   display: flex;
   font-weight: bolder;
@@ -39,24 +40,31 @@ body {
   justify-content: center;
   align-content: center;
 }
-
 .message {
   font-size: 3vw;
   font-weight: bold;
 }
 
+/*workout sections*/
 .workout-section {
   margin: 1.5rem;
 }
-
-.workout-list-format {
+.posted-workout {
   font-weight: bolder;
-  font-size: larger;
+  font-size: 2rem;
+  text-align: center;
 }
-
 .workout-list {
   font-weight: bold;
+  font-size: 1.5rem;
 }
+.workout-details > p {
+  font-size: 1.5rem;
+}
+.workout-label {
+  font-weight: bold;
+}
+
 
 a:link, a:visited {
   color: black;
@@ -66,6 +74,17 @@ a:link, a:visited {
 a:hover{
   color: red;
 }
+
+.menu-options {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.btn {
+  margin: 0 1vh;
+}
+
 
 
 /* the overlay (background) */
